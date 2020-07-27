@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre .wav</title>
+    <link rel="shortcut icon" href="imagenes/logos/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="scripts/dropdown_menu.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">  
+</head>
+<body>
+    <div>
+        <nav>
+            <div class="nav_mobile">
+            <a class="hamburgerIcon" onclick="menuOpen()" href="#">
+              <div>
+                <i class="material-icons">menu</i>
+              </div>
+            </a>
+            <ul>
+              <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
+              <div id="show">
+                <li class="hidden"><a href="index.html">HOME</a></li>
+                <li class="hidden"><a href="artistas.html">ARTISTAS</a></li>
+                <li class="hidden"><a href="albums.html">ÁLBUMS</a></li>
+                <li class="hidden"><a href="generos.html">GÉNEROS</a></li>
+                <li class="hidden"><a href="playlist.html">PLAYLIST</a></li>
+                <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+              </div>
+            </ul>
+            </div>
+        </nav>
+        <nav>
+            <div class="nav_desktop">
+                <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
+                <a  class="nav_text"  href="index.html">HOME</a>
+                <a class="nav_text"  href="artistas.html">ARTISTAS</a>
+                <a class="nav_text"  href="albums.html">ÁLBUMS</a>
+                <a class="nav_text"  href="generos.html">GÉNEROS</a>
+                <a class="nav_text" href="playlist.html">PLAYLIST</a>
+                <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+            </div>
+          </nav> 
+    </div>
+    <main>
+      <div class="top-title">
+        <h2 class="playlist"><span style="color:#7acfe8">&#9893;</span> ¿géneros? <span style="color:#7acfe8">&#9893;</span></h2>
+        <p class="artistas-text2" style="color:#7acfe8;">deezer te ofrece estos...</p>
+        <p class="artistas-text2">Si no te gusta <span style="color:#7acfe8">ninguno</span> de los que ves, consideramos que es entendible </p>
+      </div>
+      <div class="generos-lista"></div>
+      <div id="searchShadow"></div>
+      <div id="spinner"></div> 
+    </main>
+
+    <footer>
+        <div class="grid-footer-container">
+          <div class="grid-footer-column">
+           <img class= 'deezer' src="imagenes/deezer-logo.png" width="100%" alt="deezer footer">
+          </div>
+          <div class="grid-footer-column">
+           <ul>
+             <li><a href="https://www.facebook.com/DeezerLatino/?brand_redir=173259534981" class="fa fa-facebook social-icon"></a></li>
+             <li><a href="https://twitter.com/deezer?lang=es" class="fa fa-twitter social-icon"></a></li>
+             <li><a href="https://www.instagram.com/deezer/?hl=es-la" class="fa fa-instagram social-icon"></a></li>
+           </ul>
+          </div>
+          <div class="grid-footer-column">
+           <p>Made with <span style="color:#7acfe8;">&#10084;</span> by: Rocio Jacob, Camila Gauto & Lorenzo Fallik</p>
+          </div>
+        </div>
+      </footer>
+      <script src="scripts/generos.js"></script>
+</body>
+</html>
