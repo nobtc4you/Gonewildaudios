@@ -163,6 +163,77 @@ nav > ul > li:first-child {
 }
 
 /*CAM*/
+.profileColumns{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 20px;
+}
+
+.profileLeft{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  padding: 10px;
+  align-items: center;
+}
+
+.profileLeft img{
+  margin: 10px;
+  padding: 2px;
+  border-radius: 50%;
+  height: 200px;
+}
+
+.bio{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  padding: 25px;
+  max-height: 320px;
+  overflow:auto;
+}
+
+.upload{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  color: #7acfe8;
+  max-width: 100px;
+  padding: 7px;
+}
+
+
+.likedAudios{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  padding: 25px;
+  height:auto;
+  max-height:39vh;
+  overflow:auto;
+}
+
+.userPlaylists{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height:auto;
+  max-height:39vh;
+  overflow:auto;
+}
+
+.userPlaylists img{
+  width: 265px;
+  margin: 20px;
+}
+
 .welcome{
   font-weight: normal !important;
 }
@@ -903,6 +974,9 @@ img.search-img {
     padding: 0;
     text-align: left;
     font-size: 12px !important;
+  }
+  .item-2 p{
+    font-weight: lighter !important;
   }
   .item-3 {
     margin: 10px;
