@@ -163,11 +163,6 @@ nav > ul > li:first-child {
 }
 
 /*CAM*/
-.profileColumns{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  margin: 20px;
-}
 
 .profileLeft{
   background-color: #52525241;
@@ -211,8 +206,6 @@ nav > ul > li:first-child {
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
   margin: 10px;
   padding: 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   height:auto;
   max-height:37vh;
   overflow:auto;
@@ -233,8 +226,6 @@ nav > ul > li:first-child {
   background-color: #52525241;
   border-radius: 10px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
-  margin: 10px;
-  max-width: 650px;
   padding: 10px;
 }
 
@@ -880,7 +871,7 @@ img.search-img {
 
 /*MEDIA QUERIES*/
 
-@media(max-width:768px){
+@media(max-width:768px){  
   .albums-display{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -901,6 +892,17 @@ img.search-img {
 
 @media(min-width:768px){
   /*CAM*/
+  .profileColumns{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 20px;
+  }
+
+  .userPlaylists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .text{
     font-size: 18px;
   }
@@ -1131,7 +1133,11 @@ img.search-img {
   .icon_desktop {
     margin-left: 10px;
   }
-  
+  .userPlaylists{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
  /*CAM*/
  .favart{
   border-radius: 50%;
