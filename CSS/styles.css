@@ -234,8 +234,13 @@ nav > ul > li:first-child {
   border-radius: 10px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
   margin: 10px;
-  max-width: 600px;
-  padding: 7px;
+  max-width: 650px;
+  padding: 10px;
+}
+
+.registerBox img{
+  border-radius: 50%;
+  width: 200px;
 }
 
 .welcome{
