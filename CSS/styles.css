@@ -194,17 +194,6 @@ nav > ul > li:first-child {
   overflow:auto;
 }
 
-.upload{
-  background-color: #52525241;
-  border-radius: 10px;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
-  margin: 10px;
-  color: #7acfe8;
-  max-width: 100px;
-  padding: 7px;
-}
-
-
 .likedAudios{
   background-color: #52525241;
   border-radius: 10px;
@@ -238,6 +227,15 @@ nav > ul > li:first-child {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 20px;
+}
+
+.registerBox{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  max-width: 600px;
+  padding: 7px;
 }
 
 .welcome{
