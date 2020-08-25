@@ -13,42 +13,366 @@
     rel="stylesheet">  
 </head>
 <body>
-    <div>
-        <nav>
-            <div class="nav_mobile">
-            <a class="hamburgerIcon" onclick="menuOpen()" href="#">
-              <div>
-                <i class="material-icons">menu</i>
-              </div>
+
+=======
+    <nav>
+        <div class="nav_mobile">
+        <a class="hamburgerIcon" onclick="menuOpen()" href="#">
+          <div>
+            <i class="material-icons">menu</i>
+          </div>
+        </a>
+        <ul>
+          <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
+          <div id="show">
+            <li class="hidden"><a href="index.html">HOME</a></li>
+            <li class="hidden"><a href="register.html"></a>ENTER</li>
+            <li class="hidden"><a href="profile.html">PROFILE</a></li>
+            <li class="hidden"><a href="contact.html">CONTACT</a></li>
+            <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+          </div>
+        </ul>
+        </div>
+      </nav>
+      <nav>
+        <div class="nav_desktop">
+            <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
+            <a class="nav_text" href="index.html">HOME</a>
+            <a class="nav_text" href="register.html">ENTER</a>
+            <a class="nav_text" href="profile.html">PROFILE</a>
+            <a class="nav_text" href="contact.html">CONTACT</a>
+            <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+        </div>
+    </nav> 
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <a href="generaldetail.html?id=129&type=genre">
+                <img src="imagenes/carousel/flapper dance.gif" style="width:100%">
+                <div class="text">JAZZ</div>
             </a>
-            <ul>
-              <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
-              <div id="show">
-                <li class="hidden"><a href="index.html">HOME</a></li>
-                <li class="hidden"><a href="artistas.html">ARTISTAS</a></li>
-                <li class="hidden"><a href="albums.html">ÁLBUMS</a></li>
-                <li class="hidden"><a href="login.html">LOG IN</a></li>
-                <li class="hidden"><a href="register.html">SIGN UP</a></li>
-                <li class="hidden"><a href="profile.html">YOUR PROFILE</a></li>
-                <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
-              </div>
-            </ul>
-            </div>
-        </nav>
-        <nav>
-            <div class="nav_desktop">
-                <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
-                <a class="nav_text"  href="index.html">HOME</a>
-                <a class="nav_text"  href="artistas.html">ARTISTAS</a>
-                <a class="nav_text"  href="albums.html">ÁLBUMS</a>
-                <a class="nav_text"  href="login.html">LOG IN</a>
-                <a class="nav_text" href="register.html">SIGN UP</a>
-                <a class="nav_text" href="profile.html">YOUR PROFILE</a>
-                <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
-            </div>
-          </nav> 
+        </div>
+        <div class="slides fade">
+            <a href="generaldetail.html?id=113&type=genre">
+                <img src="imagenes/carousel/skeletons.gif" style="width:100%">
+                <div class="text">DANCE</div>
+            </a>
+        </div>
+        <div class="slides fade">
+            <a href="generaldetail.html?id=152&type=genre">
+                <img src="imagenes/carousel/bvb.gif" style="width:100%">
+                <div class="text">ROCK</div>
+            </a>
+        </div>  
+        <div class="slides fade">
+            <a href="generaldetail.html?id=98&type=genre">
+                <img src="imagenes/carousel/piano.gif" style="width:100%">
+                <div class="text">CLASSICAL</div>
+            </a>
+        </div> 
+        <div class="slides fade">
+            <a href="generaldetail.html?id=85&type=genre">
+                <img src="imagenes/carousel/bmth.gif" style="width:100%">
+                <div class="text">ALTERNATIVE</div>
+            </a>
+        </div>
+        <div class="slides fade">
+            <a href="generaldetail.html?id=464&type=genre">
+                <img src="imagenes/carousel/headbanging.gif" style="width:100%">
+                <div class="text">METAL</div>
+            </a>
+        </div>
+        <div class="slides fade">
+            <a href="generaldetail.html?id=173&type=genre">
+                <img src="imagenes/carousel/jake.gif" style="width:100%">
+                <div class="text">FILMS / GAMES</div>
+            </a>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+    <p class="welcome">bienvenidxs al reproductor de música favorito de los centennials...</p>
+    <h3>enjoy<span style="color:#7acfe8;">&#9786;</span></h3>
+    <img class="favart" src="imagenes/deezer-index.jpg"  alt="logo Deezer b&n">
+    <h2>deezer's picks</h2>
+    <div class="deezerPicks">
+        <div class="deezerArtists">
+            <h2>ARTISTAS</h2>
+            <div class="chartArtists"></div>
+        </div>
+        <div class="deezerAlbums">
+            <h2>ÁLBUMS</h2>
+            <div class="chartAlbums"></div>
+        </div>
+        <div class="deezerTracks">
+            <h2>TRACKS</h2>
+            <div class="chartTracks"></div>
+        </div>
+    </div>
+    <h2>TOP ARTISTAS</h2>
+    <div class="topArtists">
+        <div class="cam1">
+            <img class="favart" src="imagenes/cam.jpg"  alt="type o negative">
+                <h2>cam's picks</h2>
+                <p>incluye artistas como: </p>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/manson-index.jpg" width="100%" alt="Marilyn Manson">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Marilyn Manson</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/bauhaus-index.jpg" width="100%" alt="Bauhaus">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=3657&type=artist"><h4 class="item-2">Bauhaus</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/pulp-index.jpg" width="100%" alt="Pulp">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=2003&type=artist"><h4 class="item-2">Pulp</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+        </div>
+        <div class="rochi1">
+            <img class="favart" src="imagenes/rochi.jpg"  alt="the chainsmokers">
+                <h2>rochi's picks</h2>
+                <p>incluye artistas como: </p>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/billie-index.jpg" width="100%" alt="Billie Eilish">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=9635624&type=artist"><h4 class="item-2">Billie Eilish</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/r3hab-index.jpg" width="100%" alt="R3hab">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=1353625&type=artist"><h4 class="item-2">R3hab</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/kaskade-index.jpg" width="100%" alt="Kaskade">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=4576&type=artist"><h4 class="item-2">Kaskade</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+        </div>
+        <div class="lolo1">
+            <img class="favart" src="imagenes/lolo.jpg" alt="queen">
+                <h2>lolo's picks</h2>
+                <p>incluye artistas como: </p>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/uzi-index.jpg" width="100%" alt="lil uzi vert">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=7101343&type=artist"><h4 class="item-2">Lil Uzi Vert</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/cro-index.jpg" width="100%" alt="C.R.O">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=13571283&type=artist"><h4 class="item-2">C.R.O</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="artlist">
+                    <img class="artlistImg" src="imagenes/artists/relsb-index.jpg" width="100%" alt="Rels B">
+                    <div class="song-text">
+                        <a href="generaldetail.html?id=10580067&type=artist"><h4 class="item-2">Rels B</h4></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+        </div>
+    </div>
+    <h2>TOP CANCIONES</h2>
+    <div class="topTracks">
+        <div class="cam2">
+            <iframe width=100% height=300px src="https://www.youtube.com/embed/Ow_qI_F2ZJI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>cam's picks</h2>
+            <p>incluye temas como: </p>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/afterall-index.jpg" width="100%" alt="The Man Who Sold the World album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=107470090&type=track"><h4 class="item-2">After All</h4></a>
+                    <a href="generaldetail.html?id=997&type=artist"><p class="item-2">David Bowie</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div> 
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/molchatdoma-index.jpg" width="100%" alt="Этажи Album Cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">танцевать</h4></a>
+                    <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">МолчатДома</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>     
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=14639558&type=track"><h4 class="item-2">Push</h4></a>
+                    <a href="generaldetail.html?id=381&type=artist"><p class="item-2">The Cure</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+        </div>
+        <div class="rochi2">
+            <iframe width=100% height=300px src="https://www.youtube.com/embed/-PZsSWwc9xA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>rochi's picks</h2>
+            <p>incluye temas como: </p>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/crusade-index.jpg" width="100%" alt="CRUSADE album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=871259252&type=track"><h4 class="item-2">Crusade</h4></a>
+                    <a href="generaldetail.html?id=59005172&type=artist"><p class="item-2">Marshmello</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/tiesto-index.jpg" width="100%" alt="Tiësto Featuring Bright Sparks album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=139872437&type=track"><h4 class="item-2">On My Way</h4></a>
+                    <a href="generaldetail.html?id=434&type=artist"><p class="item-2">TIËSTO</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/joyryde-index.png" width="100%" alt="Brave album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=920328892&type=track"><h4 class="item-2">BROOKLYN</h4></a>
+                    <a href="generaldetail.html?id=1233943&type=artist"><p class="item-2">JOYRYDE</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+        </div>
+        <div class="lolo2">
+            <iframe width=100% height=300px src="https://www.youtube.com/embed/gh72dXr4fTM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>lolo's picks</h2>
+            <p>incluye temas como: </p>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/goodinanyhood-index.jpg" width="100%" alt="Good in any hood album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=123366152&type=track"><h4 class="item-2">Higher</h4></a>
+                    <a href="generaldetail.html?id=339209&type=artist"><p class="item-2">J. Cole</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/eternalatake-index.jpg" width="100%" alt="Eternal Atake album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=898025672&type=track"><h4 class="item-2">Baby Pluto</h4></a>
+                    <a href="generaldetail.html?id=7101343&type=artist"><p class="item-2">Lil Uzi Vert</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+            <div class="songlists">
+                <img class="songlistsImg" src="imagenes/detail songs/afterhouse-index.jpg" width="100%" alt="After House album cover">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=819662282&type=track"><h4 class="item-2">After House</h4></a>
+                    <a href="generaldetail.html?id=13571283&type=artist"><p class="item-2">C.R.O</p></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+            </div>
+        </div>
+    </div>
+    <h2>TOP ÁLBUMS</h2>
+    <div class="topAlbums">
+        <div class="cam3">
+            <h2>cam's picks</h2>
+            <p>incluye álbums como: </p>
+            <div class="albums-display">
+                <div class="alblist">
+                    <a href="generaldetail.html?id=86159&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/bloodykisses-index.jpg" alt="Bloody Kisses">
+                        <h4 class="item-3">Bloody Kisses</h4>
+                    </a>
+                    <a href="generaldetail.html?id=824&type=artist"><p class="item-3">Type O Negative</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=12107828&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/deathofabachelor-index.jpg" alt="Death of a Bachelor">
+                        <h4 class="item-3">Death of a Bachelor</h4>
+                    </a>
+                    <a href="generaldetail.html?id=402&type=artist"><p class="item-3">Panic! at the Disco</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=84569812&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/amo-index.png" alt="AMO">
+                        <h4 class="item-3">AMO</h4>
+                    </a>
+                    <a href="generaldetail.html?id=12874&type=artist"><p class="item-3">Bring me the Horizon</p></a>
+                </div>
+            </div> 
+        </div>
+        <div class="rochi3">
+            <h2>rochi's picks</h2>
+            <p>incluye álbums como: </p>
+            <div class="albums-display">
+                <div class="alblist">
+                    <a href="generaldetail.html?id=86712972&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/artpop-index.jpg" alt="ARTPOP">
+                        <h4 class="item-3">ARTPOP</h4>
+                    </a>
+                    <a href="generaldetail.html?id=75491&type=artist"><p class="item-3">Lady Gaga</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=11471884&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/bouquet.jpg" alt="Bouquet">
+                        <h4 class="item-3">Bouquet</h4>
+                    </a>
+                    <a href="generaldetail.html?id=4104927&type=artist"><p class="item-3">The Chainsmokers</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=139755282&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/joyryde-index.png" alt="BRAVE">
+                        <h4 class="item-3">BRAVE</h4>
+                    </a>
+                    <a href="generaldetail.html?id=1233943&type=artist"><p class="item-3">JOYRYDE</p></a>
+                </div>
+            </div> 
+        </div>
+        <div class="lolo3">
+            <h2>lolo's picks</h2>
+            <p>incluye álbums como: </p>
+            <div class="albums-display">
+                <div class="alblist">
+                    <a href="generaldetail.html?id=135172192&type=album">
+                        <img class="alblistimg" src="imagenes/detail songs/eternalatake-index.jpg" alt="Eternal Atake">
+                        <h4 class="item-3">Eternal Atake</h4>
+                    </a>
+                    <a href="generaldetail.html?id=7101343&type=artist"><p class="item-3">Lil Uzi Vert</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=7830658&type=album">
+                        <img class="alblistimg" src="imagenes/tiestoalbum.jpg" alt="A Town Called Paradise">
+                        <h4 class="item-3">A Town Called Paradise</h4>
+                    </a>
+                    <a href="generaldetail.html?id=434&type=artist"><p class="item-3">Tiësto</p></a>
+                </div>
+                <div class="alblist">
+                    <a href="generaldetail.html?id=113994012&type=album">
+                        <img class="alblistimg" src="imagenes/relsbalbum.jpg" alt="Happy birthday flakko">
+                        <h4 class="item-3">Happy birthday flakko</h4>
+                    </a>
+                    <a href="generaldetail.html?id=10580067&type=artist"><p class="item-3">Rels B</p></a>
+                </div>
+            </div> 
+        </div>
+    </div>
+>>>>>>> bc323d46eae27b7733d5135095eea7f4398346ce
     <footer>
         <div class="grid-footer-container">
    
