@@ -15,6 +15,12 @@ module.exports = {
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
 
     }, 
+    getPodcastByUserId: (req,res) => {
+        const userId = req.user.user.Id
+        DataBase.query(`SELECT * FROM Podcasts WHERE UserId = ${userId}`, { type: sequelize.QueryTypes.SELECT })
+        .then(result =>res.status(200).json(result))
+        .catch(error => console.log(error) || res.status(400).json('Invalid data'))
+    },
     postPodcast: (req,res) => {
         const UserId = req.user.user.Id
 
@@ -43,8 +49,16 @@ module.exports = {
     }, 
     deletePodcast: (req, res) => {
         const id = req.params.id
-                DataBase.query(`DELETE FROM Podcasts WHERE Id = ${id}`,{type: sequelize.QueryTypes.DELETE})
-                .then(result => (console.log(result)) || res.status(200).json("Podcast removed."))
-                .catch(error => console.log(error) || res.status(400).send('Invalid data'))               
+        const isAdimn = req.user.user.isAdmin
+        const userId = req.user.user.Id
+        if(isAdimn){
+            DataBase.query(`DELETE FROM Podcasts WHERE Id = ${id}`,{type: sequelize.QueryTypes.DELETE})
+            .then(result => (console.log(result)) || res.status(200).json("Podcast removed."))
+            .catch(error => console.log(error) || res.status(400).send('Invalid data'))     
+        } else{ 
+            DataBase.query(`DELETE FROM Podcasts WHERE Id = ${id} AND UserId = ${userId}`,{type: sequelize.QueryTypes.DELETE})
+            .then(result => (console.log(result)) || res.status(200).json("Podcast removed."))
+            .catch(error => console.log(error) || res.status(400).send('Invalid data'))     
+        }                         
     }
 }

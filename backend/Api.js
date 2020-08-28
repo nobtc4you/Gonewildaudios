@@ -1,8 +1,8 @@
 const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');
-const { signUp, logIn, /* updateUser, deleteUser*/} = require('./Users')
-const {getAllPodcast, getPodcastById, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
+const { signUp, logIn, updateUser, deleteUser} = require('./Users')
+const {getAllPodcast, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
 
@@ -20,16 +20,17 @@ api.use(function(err, req, res, next) {
 
 api.post('/Users', signUp)
 api.post('/Users/login', findUser, logIn)
-/* api.put('/Users', userOK, updateUser)
-api.delete('/Users/:id', userOK, deleteUser)  */
+api.put('/Users', validateUser, updateUser)
+api.delete('/Users', validateUser, deleteUser) 
 
 //... Podacast's endpoints ...
 
 api.get('/Podcasts', getAllPodcast)
-api.get('/Podcasts/:id', getPodcastById)
+api.get('/Podcast/:id', getPodcastById)
+api.get('/Podcasts/User',validateUser, getPodcastByUserId)
 api.post('/Podcasts', validateUser, postPodcast )
-api.put('/Podcasts/:id', validateUser, updatePodcast)
-api.delete('/Podcasts/:id', deletePodcast) 
+api.put('/Podcast/:id', validateUser, updatePodcast)
+api.delete('/Podcast/:id', validateUser, deletePodcast) 
 
 // ... Favorites ...
 

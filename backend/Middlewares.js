@@ -22,7 +22,7 @@ module.exports = {
             }
         } catch (err){ 
             console.log("Este error:" + err) 
-/*             res.json({error: 'error al validar usuario'}) */
+            res.json({error: 'error al validar usuario'})
         }
     }
 

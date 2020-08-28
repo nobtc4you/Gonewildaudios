@@ -43,26 +43,18 @@ module.exports ={
         }
     
     },
-
-   /*  updateClient: (req, res) => { 
+    updateUser: (req, res) => { 
         const id = req.user.user.id
-        const newTelefono = req.body.telefono
-        const newDireccion = req.body.direccion
-        const newEmail = req.body.email
-        DataBase.query(`UPDATE clientes SET telefono = ${newTelefono}, direccion = "${newDireccion}", email = "${newEmail}" WHERE id = ${id}`,{type: sequelize.QueryTypes.SET})
+        const password = req.body.Password
+        const aboutMe = req.body.AboutMe
+        DataBase.query(`UPDATE Users SET password = ${password}, About_me = "${aboutMe}" WHERE id = ${id}`,{type: sequelize.QueryTypes.SET})
         .then(result => (console.log(result)) || res.status(200).json("Usuario Actualizado"))
         .catch(error => console.log(error) || res.status(400).send('Invalid data')) 
     },
-
-    getClients: (req,res)=>{
-        DataBase.query('SELECT * FROM clientes', { type: sequelize.QueryTypes.SELECT }).then(result =>res.status(200).json(result))
-
-    },
-    
-    deleteClient: (req, res) => { 
+    deleteUser: (req, res) => { 
         const id = req.params.id   
-            DataBase.query(`DELETE FROM clientes WHERE id = ${id}`,{type: sequelize.QueryTypes.DELETE})
-            .then(result => (console.log(result)) || res.status(200).json("Cliente Eliminado"))
+            DataBase.query(`DELETE FROM Users WHERE id = ${id}`,{type: sequelize.QueryTypes.DELETE})
+            .then(result => (console.log(result)) || res.status(200).json("User eliminated."))
             .catch(error => console.log(error) || res.status(400).send('Invalid data'))  
-    } */
+    }
 } 
