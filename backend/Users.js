@@ -8,7 +8,7 @@ module.exports ={
 
     signUp: (req, res) =>{
         DataBase.query(
-            'INSERT INTO users (User, Mail, Password, About_me) VALUES (:User, :Mail, :Password, :About_me)',{
+            'INSERT INTO Users (User, Mail, Password, About_me) VALUES (:User, :Mail, :Password, :About_me)',{
                 replacements: req.body
             }).then(result => console.log(result) || res.status(200).json('User sign up: Ok'))
               .catch(error => console.log(error) || res.status(400).send('Invalid data'))
@@ -17,11 +17,10 @@ module.exports ={
     logIn: async (req,res) =>{
         const reqUser = req.body.User
         const reqPass = req.body.Password
-        const password = await DataBase.query(`SELECT Id, Password FROM users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
-        const isAdmin = await DataBase.query(`SELECT Id, IsAdmin FROM users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const password = await DataBase.query(`SELECT Id, Password FROM Users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const isAdmin = await DataBase.query(`SELECT Id, IsAdmin FROM Users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
         const passwordOk = password[0].Password
         const adminOk = isAdmin.find(item => item.is_admin === 1)
-        console.log(password)
        
         if(passwordOk == reqPass){
             if(adminOk == undefined){

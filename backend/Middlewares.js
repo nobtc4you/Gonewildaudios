@@ -7,26 +7,25 @@ module.exports = {
     findUser: async (req, res, next) => {
         const db = await DataBase.query(`SELECT * FROM users WHERE User = "${req.body.User}"`, {type: sequelize.QueryTypes.SELECT})
         const dbFind = db.find(item => item.User == req.body.User)
-        console.log("test: "+ dbFind)
      if(!dbFind){
             return res.status(400).json('Usuario o contraseña incorrectos!');
         } 
         next()  
     },
-/*     validateUser: (req, res, next) => {
+    validateUser: (req, res, next) => {
         try{
             const token = req.headers.authorization.split(' ')[1]
             const verifyToken = jwt.verify(token, firm)
-            console.log("Mira esto: " + verifyToken.Id)
             if(verifyToken){
-                req.user = verifyToken;
+                req.user = verifyToken;  
                 return next()
             }
-        } catch (err){
-            res.json({error: 'error al validar usuario'})
+        } catch (err){ 
+            console.log("Este error:" + err) 
+/*             res.json({error: 'error al validar usuario'}) */
         }
     }
- */
+
 
   /*
 
