@@ -13,58 +13,54 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <nav>
-            <div class="nav_mobile">
-            <a class="hamburgerIcon" onclick="menuOpen()" href="#">
-              <div>
-                <i class="material-icons">menu</i>
-              </div>
-            </a>
-            <ul>
-              <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
-              <div id="show">
-                <li class="hidden"><a href="index.html">HOME</a></li>
-                <li class="hidden"><a href="artistas.html">ARTISTAS</a></li>
-                <li class="hidden"><a href="albums.html">ÁLBUMS</a></li>
-                <li class="hidden"><a href="generos.html">GÉNEROS</a></li>
-                <li class="hidden"><a href="playlist.html">PLAYLIST</a></li>
-                <li class="hidden"><a href="profile.html">YOUR PROFILE</a></li>
-                <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
-              </div>
-            </ul>
-            </div>
-        </nav>
-        <nav>
-            <div class="nav_desktop">
-                <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
-                <a class="nav_text"  href="index.html">HOME</a>
-                <a class="nav_text"  href="artistas.html">ARTISTAS</a>
-                <a class="nav_text"  href="albums.html">ÁLBUMS</a>
-                <a class="nav_text"  href="generos.html">GÉNEROS</a>
-                <a class="nav_text" href="playlist.html">PLAYLIST</a>
-                <a class="nav_text" href="profile.html">YOUR PROFILE</a>
-                <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
-            </div>
-          </nav> 
-    </div>
+    <nav>
+        <div class="nav_mobile">
+        <a class="hamburgerIcon" onclick="menuOpen()" href="#">
+          <div>
+            <i class="material-icons">menu</i>
+          </div>
+        </a>
+        <ul>
+          <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
+          <div id="show">
+            <li class="hidden"><a href="index.html">HOME</a></li>
+            <li class="hidden"><a href="register.html"></a>ENTER</li>
+            <li class="hidden"><a href="profile.html">PROFILE</a></li>
+            <li class="hidden"><a href="contact.html">CONTACT</a></li>
+            <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+          </div>
+        </ul>
+        </div>
+    </nav>
+    <nav>
+        <div class="nav_desktop">
+            <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
+            <a class="nav_text" href="index.html">HOME</a>
+            <a class="nav_text" href="contact.html">CONTACT</a>
+            <a class="nav_text" href="register.html">SIGN UP</a>
+            <a class="nav_text" href="login.html">LOG IN</a>
+            <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+        </div>
+    </nav> 
     <div class="profileColumns">
         <div class="profileLeft">
             <img src="imagenes/cam.jpg" alt="">
             <h2>USERNAME</h2>
+            <h4>pronouns: <span style="color:#7acfe8;">THEY/THEM</span></h4>
             <h3>about me:</h3>
             <div class="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos!</div>
             <button type="button" class="btn btn-secondary">UPLOAD</button>
-            <button type="button" class="btn btn-outline-light">SETTINGS</button>
+            <a href="settings.html">
+                <button type="button" class="btn btn-outline-light">SETTINGS</button>
+            </a>
         </div>
         <div class="profileRight">
-            <h2>LIKED AUDIOS</h2>
+            <h2>MY AUDIOS</h2>
             <div class="likedAudios">
                 <div class="songlists">
                     <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
                     <div class="song-text">
                         <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
-                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
                     </div>
                     <i class="material-icons">more_horiz</i>
                 </div>
@@ -72,7 +68,6 @@
                     <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
                     <div class="song-text">
                         <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
-                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
                     </div>
                     <i class="material-icons">more_horiz</i>
                 </div>
@@ -80,7 +75,6 @@
                     <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
                     <div class="song-text">
                         <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
-                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
                     </div>
                     <i class="material-icons">more_horiz</i>
                 </div>
@@ -88,7 +82,6 @@
                     <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
                     <div class="song-text">
                         <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
-                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
                     </div>
                     <i class="material-icons">more_horiz</i>
                 </div>
@@ -96,7 +89,6 @@
                     <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
                     <div class="song-text">
                         <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
-                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
                     </div>
                     <i class="material-icons">more_horiz</i>
                 </div>
@@ -140,15 +132,53 @@
                     </div>
                 </a>
             </div>
+            <h2>LIKED AUDIOS</h2>
+            <div class="likedAudios">
+                <div class="songlists">
+                    <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                    <div class="song-text">
+                        <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
+                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="songlists">
+                    <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                    <div class="song-text">
+                        <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
+                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="songlists">
+                    <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                    <div class="song-text">
+                        <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
+                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="songlists">
+                    <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                    <div class="song-text">
+                        <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
+                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+                <div class="songlists">
+                    <img class="songlistsImg" src="imagenes/detail songs/theheadonthedoor-index.jpg" width="100%" alt="The Head On The Door album cover">
+                    <div class="song-text">
+                        <a href="#"><h4 class="item-2">AUDIO TITLE</h4></a>
+                        <a href="#"><p class="item-2">CREATOR NAME</p></a>
+                    </div>
+                    <i class="material-icons">more_horiz</i>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
         <div class="grid-footer-container">
-   
-          <div class="grid-footer-column">
-           <img class= 'deezer' src="imagenes/deezer-logo.png" width="100%" alt="deezer footer">
-          </div>
-   
           <div class="grid-footer-column">
            <ul>
              <li><a href="https://www.facebook.com/DeezerLatino/?brand_redir=173259534981" class="fa fa-facebook social-icon"></a></li>
@@ -158,7 +188,7 @@
           </div>
    
           <div class="grid-footer-column">
-           <p>Made with <span style="color:#7acfe8;">&#10084;</span></p>
+           <p>Made with <span style="color:#F01B1B;">LUST</span> by: GoneWildAudios</p>
           </div>
         </div>
         
