@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>upload viewport</title>
+    <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="shortcut icon" href="imagenes/logos/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
@@ -13,96 +13,80 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav_mobile">
-        <a class="hamburgerIcon" onclick="menuOpen()" href="#">
-          <div>
-            <i class="material-icons">menu</i>
-          </div>
-        </a>
-        <ul>
-          <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
-          <div id="show">
-            <li class="hidden"><a href="index.html">HOME</a></li>
-            <li class="hidden"><a href="register.html"></a>ENTER</li>
-            <li class="hidden"><a href="profile.html">PROFILE</a></li>
-            <li class="hidden"><a href="contact.html">CONTACT</a></li>
-            <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
-          </div>
-        </ul>
-        </div>
-    </nav>
-    <nav>
-        <div class="nav_desktop">
-            <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
-            <a class="nav_text" href="index.html">HOME</a>
-            <a class="nav_text" href="contact.html">CONTACT</a>
-            <a class="nav_text" href="register.html">SIGN UP</a>
-            <a class="nav_text" href="login.html">LOG IN</a>
-            <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
-        </div>
-    </nav>  
+    <div>
+        <nav>
+            <div class="nav_mobile">
+            <a class="hamburgerIcon" onclick="menuOpen()" href="#">
+              <div>
+                <i class="material-icons">menu</i>
+              </div>
+            </a>
+            <ul>
+              <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
+              <div id="show">
+                <li class="hidden"><a href="index.html">HOME</a></li>
+                <li class="hidden"><a href="artistas.html">ARTISTAS</a></li>
+                <li class="hidden"><a href="albums.html">ÁLBUMS</a></li>
+                <li class="hidden"><a href="generos.html">GÉNEROS</a></li>
+                <li class="hidden"><a href="playlist.html">PLAYLIST</a></li>
+                <li class="hidden"><a href="profile.html">YOUR PROFILE</a></li>
+                <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+              </div>
+            </ul>
+            </div>
+        </nav>
+        <nav>
+            <div class="nav_desktop">
+                <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
+      <a class="nav_text" href="index.html">HOME</a>
+      <a class="nav_text" href="contact.html">CONTACT</a>
+      <a class="nav_text" href="register.html">SIGN UP</a>
+      <a class="nav_text" href="login.html">LOG IN</a>
+      <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+            </div>
+          </nav> 
     </div>
-    <div class="uploadColumns">
-        <div class="profileLeft">
-            <img src="imagenes/cam.jpg" alt="">
-            <h2>USERNAME</h2>
-            <h4>pronouns: <span style="color:#7acfe8;">THEY/THEM</span></h4>
-            <h3>about me:</h3>
-            <div class="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos!</div>
-            <button type="button" class="btn btn-secondary">CANCEL</button>
-            <button type="button" class="btn btn-outline-light">SETTINGS</button>
-        </div>
-        <div class="uploadRight">
-            <h2>UPLOAD</h2>
-            <div class="likedAudios">
-                <p>Drag file or search from computer :)</p>
+    <p class="text-center">Edit to modify your account</p>
+    <div class="registerBox container-fluid">
+        <form>
+          
+            <div class="form-row">
+              <div class="form-group col-md-7">
+                <label for="inputCity">Gender</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Go on, this is a safe space :)"> 
+              </div>
+              <div class="form-group col">
+                <label for="inputState">Pronouns</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>They/them</option>
+                  <option>She/her</option>
+                  <option>He/him</option>
+                  <option>Honestly, idk yet</option>
+                </select>
+              </div>              
+            </div>
+           
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Tell us a little bit about yourself</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="You can write whatever you think represents you for everyone to see"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputCity">Fingers crossed you're a legal adult</label>
+                <input type="date" class="form-control" id="inputCity" placeholder=""> 
             </div>
             <form>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">TITLE:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="name your audio">
-                    </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Profile picture? (Please make it SFW)</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
-            </form>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Describe your art</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Share your script</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-            </div>
-            <form>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">TAGS:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="INSERT #">
-                    </div>
-                </div>
-            </form>
-            <button type="button" class="btn btn-secondary">PUBLISH</button>
-        </div>
+              </form>
+           
+            <button type="button" class="btn btn-primary">UPDATE</button>
+            <button type="button" class="btn btn-danger">DELETE ACCOUNT</button>
+        </form>
     </div>
-    <footer>
-        <div class="grid-footer-container">
-          <div class="grid-footer-column">
-           <ul>
-             <li><a href="https://www.facebook.com/DeezerLatino/?brand_redir=173259534981" class="fa fa-facebook social-icon"></a></li>
-             <li><a href="https://twitter.com/deezer?lang=es" class="fa fa-twitter social-icon"></a></li>
-             <li><a href="https://www.instagram.com/deezer/?hl=es-la" class="fa fa-instagram social-icon"></a></li>
-           </ul>
-          </div>
-   
-          <div class="grid-footer-column">
-           <p>Made with <span style="color:#F01B1B;">LUST</span> by: GoneWildAudios</p>
-          </div>
-        </div>
-        
-      </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
-</html>
