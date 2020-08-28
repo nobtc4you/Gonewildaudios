@@ -38,8 +38,8 @@ module.exports ={
     logIn: async (req,res) =>{
         const reqUser = req.body.User
         const reqPass = req.body.Password
-        const password = await DataBase.query(`SELECT Id, Password FROM Users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
-        const isAdmin = await DataBase.query(`SELECT Id, IsAdmin FROM Users WHERE User = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const password = await DataBase.query(`SELECT Id, Password FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const isAdmin = await DataBase.query(`SELECT Id, IsAdmin FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
         const passwordOk = password[0].Password
         const adminOk = isAdmin.find(item => item.is_admin === 1)
        
