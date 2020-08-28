@@ -1,11 +1,32 @@
 const sequelize = require('sequelize');
 const dbConf = require('./Database/databaseConf.js');        
 const DataBase = new sequelize(`${dbConf.dialect}://${dbConf.user}:${dbConf.password}@${dbConf.host}:${dbConf.port}/${dbConf.db_name}`);
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { user } = require('./Database/databaseConf.js');
 const firm = 'gwa'
 
 module.exports ={
-
+    verifyUsername: async (req,res) => {
+        const user = req.params.user
+        const db = await DataBase.query(`SELECT * FROM users WHERE User = "${user}"`, {type: sequelize.QueryTypes.SELECT})
+        const dbFind = db.find(item => item.User == user)
+     if(!dbFind){
+        return res.status(200).json('Correct user');
+        }else {
+            return res.status(400).json('Username already in use');
+        }
+          
+    },
+    verifyMail: async (req,res) => {
+        const mail = req.params.mail
+        const db = await DataBase.query(`SELECT * FROM users WHERE Mail = "${mail}"`, {type: sequelize.QueryTypes.SELECT})
+        const dbFind = db.find(item => item.Mail == mail)
+     if(!dbFind){
+        return res.status(200).json('Correct mail');
+        }else {
+            return res.status(400).json('Email already in use');
+        }
+    },
     signUp: (req, res) =>{
         DataBase.query(
             'INSERT INTO Users (User, Mail, Password, About_me) VALUES (:User, :Mail, :Password, :About_me)',{

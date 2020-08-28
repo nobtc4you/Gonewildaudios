@@ -7,7 +7,9 @@ const url = "http://127.0.0.1:3000/Users"
 
 async function register (e) {
     e.preventDefault()
-    const body = {"User": user.value, "Mail": email.value, "Password": password.value, "About_me":" "}
+    const userInput = user.value.toLowerCase()
+    const emailInput = email.value.toLowerCase()
+    const body = {"User": userInput, "Mail": emailInput, "Password": password.value, "About_me":" "}
     console.log (JSON.stringify(body))
     const resp = await fetch( url , {
        method: 'post',
@@ -20,5 +22,18 @@ async function register (e) {
     console.log(datos)
     return datos
 }
-
+async function checkUser (){
+  const userInput = user.value.toLowerCase() 
+  const resp = await fetch (`${url}/${userInput}`);
+  const datos = await resp.json();
+  console.log(datos);
+}
+async function checkMail (){
+  const emailInput = email.value.toLowerCase()
+  const resp = await fetch (`${url}/user/${emailInput}`);
+  const datos = await resp.json();
+  console.log(datos);
+}
 submit.addEventListener("click",register)
+user.addEventListener("change",checkUser)
+email.addEventListener("change",checkMail)
