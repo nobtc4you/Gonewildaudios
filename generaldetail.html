@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <script src="https://kit.fontawesome.com/029d146e2e.js" crossorigin="anonymous"></script>
-   
+    <script src="scripts/dropdown_menu.js"></script>
 </head>
 <body>
   <nav>
@@ -36,45 +36,43 @@
     <div class="nav_desktop">
         <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
         <a class="nav_text" href="index.html">HOME</a>
-        <a class="nav_text" href="register.html">ENTER</a>
-        <a class="nav_text" href="profile.html">PROFILE</a>
         <a class="nav_text" href="contact.html">CONTACT</a>
+        <a class="nav_text" href="register.html">SIGN UP</a>
+        <a class="nav_text" href="login.html">LOG IN</a>
         <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
     </div>
   </nav> 
-  <main>
-      <div class="main-detail-containter grid-detail width">
-        <div class="image-grid">
-          <div class="image-detalle"></div>
-        </div>
-        <div class="text-grid">
-          <h2 class="titulo-detalle"></h2>
-          <div class="social_followers"></div>
-          <div class="subtitulo1"></div>
-          <h3 class="subtitulo2"></h3>
-          <div class="widget-player">
-            
+    <main>
+        <div class="main-detail-containter grid-detail width">
+          <div class="image-grid">
+            <div class="image-detalle">
+              <img src="imagen de prueba.jpg" alt="">
+            </div>
           </div>
-          
-          <div class="add-buttons">
-          
-          <p><a href="#" class="agregar">Agregar a playlist</a></p>
-
-          <p><a href="index.html" class="tops">Volver a Home</a></p>
-
-          <p><a href="playlist.html" class="verPlaylist">Ver Playlist</a></p>
+          <div class="text-grid">
+            <h2 class="titulo-detalle">Título del audio</h2>
+            <div class="social_followers">
+              <p class="followers">❤ cantidad de likes</p>
+            </div>
+            <div class="subtitulo1">
+              <a href="#"> <!-- debería ser el link al perfil del artista -->
+                <h3><span style="color:#7acfe8;">Nombre del creador</span></h3>
+              </a>
+            </div>
+            <div class="widget-player">
+              <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556&app_id=1" width="700" height="350"></iframe>
+            </div>
+            <div class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tempora blanditiis doloremque aut placeat praesentium fuga ducimus nostrum? Laudantium perferendis eum aliquid maiores. Odit odio accusamus deleniti. In, culpa dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tempora blanditiis doloremque aut placeat praesentium fuga ducimus nostrum? Laudantium perferendis eum aliquid maiores. Odit odio accusamus deleniti. In, culpa dicta.
+            </div>            
+            <p><a href="#" class="agregar">Agregar a playlist</a></p>
           </div>
         </div>
-      </div>
-      <div id="searchShadow"></div>
-      <div id="spinner"></div> 
     </main>
+    <h3>Need the script?</h3>
+    <div class="script">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque facere nemo hic expedita placeat libero provident veritatis rem corrupti, qui neque quam corporis nostrum iste sapiente odit vel temporibus deserunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque facere nemo hic expedita placeat libero provident veritatis rem corrupti, qui neque quam corporis nostrum iste sapiente odit vel temporibus deserunt?</div>
     <footer>
       <div class="grid-footer-container">
- 
-        <div class="grid-footer-column">
-         <img class= 'deezer' src="imagenes/deezer-logo.png" width="100%" alt="deezer footer">
-        </div>
  
         <div class="grid-footer-column">
          <ul>
@@ -85,14 +83,9 @@
         </div>
  
         <div class="grid-footer-column">
-         <p>Made with <span style="color:#7acfe8;">&#10084;</span> by: Rocio Jacob, Camila Gauto & Lorenzo Fallik</p>
+         <p>Made with <span style="color:#F01B1B;">LUST</span> by: GoneWildAudios</p>
         </div>
- 
-      </div>
-      
-    </footer>
-    
-    <script src="scripts/detail.js"></script>
-    
+      </div> 
+    </footer>    
 </body>
 </html>
