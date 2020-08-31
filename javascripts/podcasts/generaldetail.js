@@ -4,7 +4,7 @@ const username = document.getElementById("username")
 const description = document.getElementById("description")
 const url = "http://127.0.0.1:3000"
 
-document.getElementById("test").addEventListener("click", getpodcast)
+getpodcast();
 async function getpodcast (){
     console.log("click")
     const resp = await fetch(url+"/Podcast/5")
