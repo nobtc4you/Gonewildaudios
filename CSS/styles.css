@@ -222,6 +222,26 @@ nav > ul > li:first-child {
   margin: 20px;
 }
 
+.description{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 10px;
+  padding: 25px;
+  max-height: 310px;
+  overflow:auto;
+}
+
+.script{
+  background-color: #52525241;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.116);
+  margin: 30px;
+  padding: 25px;
+  max-height: 310px;
+  overflow:auto;
+}
+
 .registerBox{
   background-color: #52525241;
   border-radius: 10px;
@@ -1349,7 +1369,7 @@ img.search-img {
     width: 350px;
   }
   main {
-    min-height: 700px;
+    min-height: 500px;
   }
   /* The overlay effect - lays on top of the container and over the image */
   .overlay {
