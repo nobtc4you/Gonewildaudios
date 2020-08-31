@@ -1,7 +1,5 @@
 const sequelize = require('sequelize');
-const dbConf = require('./Database/databaseConf.js');        
-const DataBase = new sequelize(`${dbConf.dialect}://${dbConf.user}:${dbConf.password}@${dbConf.host}:${dbConf.port}/${dbConf.db_name}`);
-
+const DataBase = new sequelize(process.env.DB_URL)
 module.exports = {
     getAllPodcast: (req,res) => {
         DataBase.query('SELECT * FROM Podcasts', { type: sequelize.QueryTypes.SELECT })

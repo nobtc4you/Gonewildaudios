@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV === "development"){
+    require('dotenv').config();
+}
+
 const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');

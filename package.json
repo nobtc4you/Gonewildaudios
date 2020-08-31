@@ -2,9 +2,11 @@
   "name": "gonewildaudios",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development nodemon backend/Api.js",
+    "start": "cross-env NODE_ENV=production node backend/Api.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "sequelize": "^6.3.4"

@@ -1,6 +1,5 @@
 const sequelize = require('sequelize');
-const dbConf = require('./Database/databaseConf.js');        
-const DataBase = new sequelize(`${dbConf.dialect}://${dbConf.user}:${dbConf.password}@${dbConf.host}:${dbConf.port}/${dbConf.db_name}`);
+const DataBase = new sequelize(process.env.DB_URL)
 
 module.exports = {
     getFavorites: (req,res) => {

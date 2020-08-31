@@ -1,9 +1,7 @@
 const sequelize = require('sequelize');
-const dbConf = require('./Database/databaseConf.js');        
-const DataBase = new sequelize(`${dbConf.dialect}://${dbConf.user}:${dbConf.password}@${dbConf.host}:${dbConf.port}/${dbConf.db_name}`);
+const DataBase = new sequelize(process.env.DB_URL)
 const jwt = require('jsonwebtoken');
-const { user } = require('./Database/databaseConf.js');
-const firm = 'gwa'
+ 
 
 module.exports ={
     verifyUsername: async (req,res) => {
@@ -48,14 +46,14 @@ module.exports ={
                 const user = password[0]
                 const token = jwt.sign({
                     user
-                }, firm)
+                }, process.env.FIRM_JWT)
                 res.json({token})
             }else { 
                 const user = isAdmin[0]
                 const token = jwt.sign({
                     user,
                     isAdmin
-                }, firm)
+                }, process.env.FIRM_JWT)
                 res.json({token})
             }
 
