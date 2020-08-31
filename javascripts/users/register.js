@@ -27,12 +27,14 @@ async function checkUser (){
   const resp = await fetch (`${url}/${userInput}`);
   const datos = await resp.json();
   console.log(datos);
+  document.getElementById('usernameInfo').innerHTML = datos
 }
 async function checkMail (){
   const emailInput = email.value.toLowerCase()
   const resp = await fetch (`${url}/user/${emailInput}`);
   const datos = await resp.json();
   console.log(datos);
+  document.getElementById('emailInfo').innerHTML = datos;
 }
 submit.addEventListener("click",register)
 user.addEventListener("change",checkUser)

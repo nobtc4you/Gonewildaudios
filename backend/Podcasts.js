@@ -8,7 +8,7 @@ module.exports = {
     }, 
     getPodcastById: (req, res) =>{
         const id = req.params.id
-        DataBase.query(`SELECT * FROM Podcasts WHERE Id = ${id}`, { type: sequelize.QueryTypes.SELECT })
+        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id  WHERE Podcasts.Id = ${id}`, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
 

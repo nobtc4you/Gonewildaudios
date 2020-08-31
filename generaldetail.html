@@ -50,21 +50,20 @@
             </div>
           </div>
           <div class="text-grid">
-            <h2 class="titulo-detalle">Título del audio</h2>
+            <h2 class="titulo-detalle" id="titlePodcast"></h2>
             <div class="social_followers">
-              <p class="followers">❤ Like this audio</p>
+              <p class="followers" id="like">❤ Like this audio</p>
             </div>
+            <button id="test">CLICKEAME </button>
             <div class="subtitulo1">
               <a href="#"> <!-- debería ser el link al perfil del artista -->
-                <h3><span style="color:#7acfe8;">Nombre del creador</span></h3>
+                <h3><span style="color:#7acfe8;" id="username"></span></h3>
               </a>
             </div>
             <div class="widget-player">
               <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=3135556&app_id=1" width="700" height="350"></iframe>
             </div>
-            <div class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tempora blanditiis doloremque aut placeat praesentium fuga ducimus nostrum? Laudantium perferendis eum aliquid maiores. Odit odio accusamus deleniti. In, culpa dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate tempora blanditiis doloremque aut placeat praesentium fuga ducimus nostrum? Laudantium perferendis eum aliquid maiores. Odit odio accusamus deleniti. In, culpa dicta.
-            </div>            
+            <div class="description" id="description"></div>            
             <p><a href="#" class="agregar">Agregar a playlist</a></p>
           </div>
         </div>
@@ -88,4 +87,5 @@
       </div> 
     </footer>    
 </body>
+<script src="javascripts/podcasts/generaldetail.js"></script>
 </html>
