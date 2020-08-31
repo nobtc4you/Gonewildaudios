@@ -7,7 +7,7 @@ const url = "http://127.0.0.1:3000"
 getpodcast();
 async function getpodcast (){
     console.log("click")
-    const resp = await fetch(url+"/Podcast/5")
+    const resp = await fetch(url+"/Podcast/1")
     const datos = await resp.json()
     console.log(datos)
     title.innerHTML = datos[0].Title;
