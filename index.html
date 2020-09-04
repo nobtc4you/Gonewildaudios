@@ -13,36 +13,275 @@
     <script src="dropdown_menu.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav_mobile">
-        <a class="hamburgerIcon" onclick="menuOpen()" href="#">
-          <div>
-            <i class="material-icons">menu</i>
-          </div>
+  <nav>
+    <div class="nav_mobile">
+    <a class="hamburgerIcon" onclick="menuOpen()" href="#">
+      <div>
+        <i class="material-icons">menu</i>
+      </div>
+    </a>
+    <ul>
+      <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
+      <div id="show">
+        <li class="hidden"><a href="index.html">HOME</a></li>
+        <li class="hidden"><a href="register.html"></a>ENTER</li>
+        <li class="hidden"><a href="profile.html">PROFILE</a></li>
+        <li class="hidden"><a href="contact.html">CONTACT</a></li>
+        <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+      </div>
+    </ul>
+    </div>
+</nav>
+<nav>
+    <div class="nav_desktop">
+        <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
+        <a class="nav_text" href="index.html">HOME</a>
+        <a class="nav_text" href="contact.html">CONTACT</a>
+        <a class="nav_text" href="register.html">SIGN UP</a>
+        <a class="nav_text" href="login.html">LOG IN</a>
+        <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+    </div>
+</nav> 
+    <div class="slideshow-container">
+      <div class="slides fade">
+          <a href="#">
+              <img src="#" style="width:100%">
+              <div class="text">TAG</div>
+          </a>
+      </div>
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
         </a>
-        <ul>
-          <li style="text-align: left;"><a class="icon" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a></li>
-          <div id="show">
-            <li class="hidden"><a href="index.html">HOME</a></li>
-            <li class="hidden"><a href="register.html"></a>ENTER</li>
-            <li class="hidden"><a href="profile.html">PROFILE</a></li>
-            <li class="hidden"><a href="contact.html">CONTACT</a></li>
-            <li class="hidden"><a href="search.html"><span class="material-icons">search</span></a></li>
+      </div>
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
+        </a>
+      </div>  
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
+        </a>
+      </div> 
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
+        </a>
+      </div>
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
+        </a>
+      </div>
+      <div class="slides fade">
+        <a href="#">
+            <img src="#" style="width:100%">
+            <div class="text">TAG</div>
+        </a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+  </div>
+  <p class="welcome">generic welcome text</p>
+  <h3>enjoy<span style="color:#7acfe8;">&#9786;</span></h3>
+  <h2>FEATURED AUDIOS</h2>
+  <div class="topTracks">
+    <div class="forHer">
+        <img height= 91px src="imagen de prueba.jpg" alt="">
+        <h2>Ladies</h2>
+        <p>witty text</p>
+        <div class="songlists">
+            <img class="songlistsImg" src="#" width="100%" alt="">
+            <div class="song-text">
+                <a href="generaldetail.html?id=107470090&type=track"><h4 class="item-2">Title</h4></a>
+                <a href="generaldetail.html?id=997&type=artist"><p class="item-2">Creator</p></a>
+            </div>
+            <i class="material-icons">more_horiz</i>
+        </div> 
+        <div class="songlists">
+            <img class="songlistsImg" src="#" width="100%" alt="">
+            <div class="song-text">
+                <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+                <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
+            </div>
+            <i class="material-icons">more_horiz</i>
+        </div>     
+        <div class="songlists">
+          <img class="songlistsImg" src="#" width="100%" alt="">
+          <div class="song-text">
+              <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+              <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
           </div>
-        </ul>
+          <i class="material-icons">more_horiz</i>
+      </div>
+    </div>
+    <div class="forThem">
+      <img height= 91px src="imagen de prueba.jpg" alt="">
+        <h2>Enbys</h2>
+        <p>witty text</p>
+        <div class="songlists">
+          <img class="songlistsImg" src="#" width="100%" alt="">
+          <div class="song-text">
+              <a href="generaldetail.html?id=107470090&type=track"><h4 class="item-2">Title</h4></a>
+              <a href="generaldetail.html?id=997&type=artist"><p class="item-2">Creator</p></a>
+          </div>
+          <i class="material-icons">more_horiz</i>
+      </div> 
+      <div class="songlists">
+          <img class="songlistsImg" src="#" width="100%" alt="">
+          <div class="song-text">
+              <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+              <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
+          </div>
+          <i class="material-icons">more_horiz</i>
+      </div>     
+      <div class="songlists">
+        <img class="songlistsImg" src="#" width="100%" alt="">
+        <div class="song-text">
+            <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+            <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
         </div>
-      </nav>
-      <nav>
-        <div class="nav_desktop">
-            <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
-            <a class="nav_text" href="index.html">HOME</a>
-            <a class="nav_text" href="contact.html">CONTACT</a>
-            <a class="nav_text" href="register.html">SIGN UP</a>
-            <a class="nav_text" href="login.html">LOG IN</a>
-            <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
+        <i class="material-icons">more_horiz</i>
+      </div>
+    </div>
+    <div class="forHim">
+      <img height= 91px src="imagen de prueba.jpg" alt="">
+        <h2>Gentlemen</h2>
+        <p>witty text</p>
+        <div class="songlists">
+          <img class="songlistsImg" src="#" width="100%" alt="">
+          <div class="song-text">
+              <a href="generaldetail.html?id=107470090&type=track"><h4 class="item-2">Title</h4></a>
+              <a href="generaldetail.html?id=997&type=artist"><p class="item-2">Creator</p></a>
+          </div>
+          <i class="material-icons">more_horiz</i>
+      </div> 
+      <div class="songlists">
+          <img class="songlistsImg" src="#" width="100%" alt="">
+          <div class="song-text">
+              <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+              <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
+          </div>
+          <i class="material-icons">more_horiz</i>
+      </div>     
+      <div class="songlists">
+        <img class="songlistsImg" src="#" width="100%" alt="">
+        <div class="song-text">
+            <a href="generaldetail.html?id=836932722&type=track"><h4 class="item-2">Title</h4></a>
+            <a href="generaldetail.html?id=73228892&type=artist"><p class="item-2">Creator</p></a>
         </div>
-    </nav> 
-
+        <i class="material-icons">more_horiz</i>
+      </div>
+    </div>
+</div>
+<h2>FEATURED ARTISTS</h2>
+  <div class="topArtists">
+      <div class="byHer">
+          <img class="favart" src="#"  alt="">
+              <h2>She/Her</h2>
+              <p>witty text</p>
+              <div class="artlist">
+                  <img class="artlistImg" src="#" width="100%" alt="">
+                  <div class="song-text">
+                      <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                  </div>
+                  <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+      </div>
+      <div class="byThem">
+          <img class="favart" src="#"  alt="">
+              <h2>They/Them</h2>
+              <p>witty text</p>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+      </div>
+      <div class="byHim">
+          <img class="favart" src="#" alt="">
+              <h2>He/Him</h2>
+              <p>witty text</p>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+              <div class="artlist">
+                <img class="artlistImg" src="#" width="100%" alt="">
+                <div class="song-text">
+                    <a href="generaldetail.html?id=482&type=artist"><h4 class="item-2">Creator</h4></a>
+                </div>
+                <i class="material-icons">more_horiz</i>
+              </div>
+      </div>
+  </div>
+  <h2>FEATURED TAGS</h2>
+  <div class="topAlbums">
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+    <a href="#" class="tagView">#TAG</a>
+  </div>
     <footer>
         <div class="grid-footer-container">
    
@@ -59,5 +298,7 @@
           </div>
         </div> 
     </footer>
+    <script src="javascripts/carousel.js"></script>
+    <script src="javascripts/index.js"></script>
 </body>
 </html>

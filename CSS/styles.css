@@ -242,6 +242,18 @@ nav > ul > li:first-child {
   overflow:auto;
 }
 
+.tagView{
+  background-color: #7acfe8;
+  border-radius: 4px;
+  box-shadow: 2px 2px 1px #316c7d;
+  margin: 10px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  overflow:auto;
+  display: inline-block;
+}
+
 .registerBox{
   background-color: #52525241;
   border-radius: 10px;
