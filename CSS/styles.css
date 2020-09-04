@@ -252,6 +252,7 @@ nav > ul > li:first-child {
   margin-bottom: 5px;
   overflow:auto;
   display: inline-block;
+  cursor: pointer;
 }
 
 .registerBox{
