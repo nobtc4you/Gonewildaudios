@@ -6,7 +6,7 @@ const topTags = document.getElementById("toptags")
 let arrayTag = []
 let i = 0
 
-while (i < 5) {
+while (i < 9) {
     const n = Math.floor(Math.random() * 10)
     const random = tags[n]
     if(!arrayTag.includes(random) ) {
