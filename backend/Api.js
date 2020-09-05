@@ -5,7 +5,7 @@ if(process.env.NODE_ENV === "development"){
 const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');
-const {verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser} = require('./Users')
+const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser} = require('./Users')
 const {getAllPodcast, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
@@ -21,7 +21,7 @@ api.use(function(err, req, res, next) {
 });
 
 //... User's endpoints ...
-
+api.get('/User/:id', getUserbyId)
 api.get('/Users/:user', verifyUsername)
 api.get('/Users/user/:mail', verifyMail)
 api.post('/Users', signUp)

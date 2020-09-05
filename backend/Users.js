@@ -4,6 +4,12 @@ const jwt = require('jsonwebtoken');
  
 
 module.exports ={
+    getUserbyId:(req,res)=> {
+        const id = req.params.id
+        DataBase.query(`SELECT * FROM users WHERE Id = "${id}"`, { type: sequelize.QueryTypes.SELECT })
+        .then(result =>res.status(200).json(result))
+        .catch(error => console.log(error) || res.status(400).json('Invalid data'))
+    },
     verifyUsername: async (req,res) => {
         const user = req.params.user
         const db = await DataBase.query(`SELECT * FROM users WHERE User = "${user}"`, {type: sequelize.QueryTypes.SELECT})

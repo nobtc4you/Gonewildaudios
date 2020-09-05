@@ -1,4 +1,5 @@
 import {tags} from "../tags.js"
+import {getpodcast} from "./generaldetail.js"
 console.log(tags)
 
 const topTags = document.getElementById("toptags")
@@ -31,12 +32,14 @@ const forHer = document.getElementById("forHer")
 const url = "http://127.0.0.1:3000"
 
 audiosForHer()
+
 async function audiosForHer(){
     const resp = await fetch(url+"/Podcasts?limit=3")
     const datos = await resp.json()
     console.log(datos)
-    datos.forEach (datos => {
-        const divAudioList = document.createElement("div")
+    datos.forEach (datos => {        
+        const divAudioList = document.createElement("a")
+            divAudioList.setAttribute("href", "generaldetail.html")
             divAudioList.className = "songlists"
         const songImg = document.createElement("img")
             songImg.className = "songlistsImg"
@@ -49,6 +52,7 @@ async function audiosForHer(){
             titleText.className = "item-2"
             titleText.innerHTML = datos.Title
         const user = document.createElement("a") 
+            user.setAttribute("href", "profile.html")
         const userText = document.createElement("h4")
             userText.className = "item-2"  
             userText.innerHTML = datos.User
@@ -64,5 +68,15 @@ async function audiosForHer(){
         divAudioList.appendChild(songText)
         divAudioList.appendChild(more)
         forHer.appendChild(divAudioList)
+        divAudioList.addEventListener("click", ()=>{
+
+            localStorage.setItem("podcastId", datos.Id);
+           
         })
+        user.addEventListener("click", ()=>{
+
+            localStorage.setItem("userId", datos.UserId);
+           
+        })
+    })
 }
