@@ -32,6 +32,7 @@ api.delete('/Users', validateUser, deleteUser)
 //... Podacast's endpoints ...
 
 api.get('/Podcasts', getAllPodcast)
+/* api.get('Podcasts/:orientation') */
 api.get('/Podcast/:id', getPodcastById)
 api.get('/Podcasts/User',validateUser, getPodcastByUserId)
 api.post('/Podcasts', validateUser, postPodcast )
