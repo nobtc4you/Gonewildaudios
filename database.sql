@@ -19,3 +19,4 @@ CREATE TABLE `Favorites`(
     `PodcastId` INT(19) NOT NULL);
 
 
+
