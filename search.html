@@ -52,9 +52,12 @@
       <main>
         <br>
         <form action="search.html" method="GET">
-            <div class="search-bar">
-                <input type="text" name="search" class="search-box" autocomplete="off">
-                <button type="submit" class="search-button"><span class="icon"><i class="fa fa-search"></i></span><p style="margin: 0px 4px;">SEARCH</p></button>
+            <!-- <div class="search-bar">
+              <div class="autocomplete "  id="resultPost">
+                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" id="searchInput" autocomplete="off" >
+            </div>
+   -->            <input type="search" name="search" class="search-box" autocomplete="off" id = "searchInput">
+              <button type="submit" class="search-button"><span class="icon"><i class="fa fa-search"></i></span><p style="margin: 0px 4px;">SEARCH</p></button>
             </div>
        
       </form>
@@ -85,6 +88,7 @@
         </div>
         
       </footer>
-      <script src="scripts/results.js"></script>
+      <script type="module" src="javascripts/tags.js"></script>
+      <script type="module" src="javascripts/podcasts/search.js"></script>
 </body>
 </html>

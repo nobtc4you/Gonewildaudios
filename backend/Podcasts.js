@@ -3,13 +3,16 @@ const DataBase = new sequelize(process.env.DB_URL)
 module.exports = {
     getAllPodcast: (req,res) => {
         const limit = req.query.limit  
-        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id LIMIT ${limit} `, { type: sequelize.QueryTypes.SELECT })
+        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id LIMIT '${limit}' `, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
     }, 
-/*     getPodcastByTag: (req,res) => {
-
-    }, */
+    getPodcastByTag: (req,res) => {
+        const tag = req.params.tag
+        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id WHERE Tags LIKE '%${tag}%'`, { type: sequelize.QueryTypes.SELECT })
+        .then(result =>res.status(200).json(result))
+        .catch(error => console.log(error) || res.status(400).json('Invalid data'))
+    },
     getPodcastById: (req, res) =>{
         const id = req.params.id
         DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id  WHERE Podcasts.Id = ${id}`, { type: sequelize.QueryTypes.SELECT })
