@@ -1,3 +1,5 @@
+
+
 const username = document.getElementById("username")
 const pronouns = document.getElementById("pronouns")
 const aboutMe = document.getElementById("aboutMe")
@@ -70,7 +72,7 @@ async function getUserAudios(id){
             const more = document.createElement("i")
                 more.className = "material-icons"
                 more.innerHTML = "more_horiz"
-                            
+                console.log("ESTOOOO "+ JSON.stringify(audio))
             titleAnchor.appendChild(title)
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)
@@ -100,7 +102,22 @@ async function getUserAudios(id){
                 btnDelete.setAttribute("type", "button")
                 btnDelete.className = "btn btn-danger"
                 btnDelete.innerHTML = "DELETE"
-                            
+                btnDelete.addEventListener("click", async () =>{
+                    const idAudio = audio.Id
+                    console.log(idAudio)
+                    const token = sessionStorage.getItem("token")
+                    const resp = await fetch(url+"/Podcast/"+ idAudio,{
+                        method: 'delete',
+                        headers:{
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer '+token
+                        },
+                    })
+                    const respJson = await resp.json()
+                    console.log(respJson) 
+                    location.reload()
+                })
+                            console.log("ESTOOOO "+audio.Id)
             titleAnchor.appendChild(title)
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)
@@ -111,6 +128,4 @@ async function getUserAudios(id){
         })
     }
 }
-
-
 

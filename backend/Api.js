@@ -6,7 +6,7 @@ const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');
 const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser, validateUserPrivate} = require('./Users')
-const {getAllPodcast, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
+const {getAllPodcast, getPodcastByTag, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
 
@@ -33,6 +33,7 @@ api.delete('/Users', validateUser, deleteUser)
 
 api.get('/Podcasts', getAllPodcast)
 /* api.get('Podcasts/:orientation') */
+/* api.get('/Podcasts/byTag/:tag', getPodcastByTag) */
 api.get('/Podcast/:id', getPodcastById)
 api.get('/Podcasts/User/:id', getPodcastByUserId)
 api.post('/Podcasts', validateUser, postPodcast )
