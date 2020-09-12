@@ -23,6 +23,7 @@ module.exports = {
             console.log("Este error:" + err) 
             res.json({error: 'error al validar usuario'})
         }
-    }
+    },
+
 }
        

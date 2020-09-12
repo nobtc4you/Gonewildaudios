@@ -81,5 +81,16 @@ module.exports ={
             DataBase.query(`DELETE FROM Users WHERE id = ${id}`,{type: sequelize.QueryTypes.DELETE})
             .then(result => (console.log(result)) || res.status(200).json("User eliminated."))
             .catch(error => console.log(error) || res.status(400).send('Invalid data'))  
+    },
+    validateUserPrivate: async (req,res) => {
+        const idToken = req.user.user.Id
+        
+        const idUser = req.body.id
+        const resp = await DataBase.query(`SELECT * FROM Users WHERE Id = ${idToken}`, { type: sequelize.QueryTypes.SELECT })
+
+        if(resp[0].Id == idUser){
+            console.log("mira" + idUser)
+            res.json(idToken);
+        }else { res.json("false")} 
     }
 } 

@@ -15,7 +15,7 @@ module.exports = {
 
     }, 
     getPodcastByUserId: (req,res) => {
-        const userId = req.user.user.Id
+        const userId = req.params.id
         DataBase.query(`SELECT * FROM Podcasts WHERE UserId = ${userId}`, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))

@@ -5,7 +5,7 @@ if(process.env.NODE_ENV === "development"){
 const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');
-const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser} = require('./Users')
+const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser, validateUserPrivate} = require('./Users')
 const {getAllPodcast, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
@@ -34,7 +34,7 @@ api.delete('/Users', validateUser, deleteUser)
 api.get('/Podcasts', getAllPodcast)
 /* api.get('Podcasts/:orientation') */
 api.get('/Podcast/:id', getPodcastById)
-api.get('/Podcasts/User',validateUser, getPodcastByUserId)
+api.get('/Podcasts/User/:id', getPodcastByUserId)
 api.post('/Podcasts', validateUser, postPodcast )
 api.put('/Podcast/:id', validateUser, updatePodcast)
 api.delete('/Podcast/:id', validateUser, deletePodcast) 
@@ -44,4 +44,7 @@ api.delete('/Podcast/:id', validateUser, deletePodcast)
 api.get('/Favorites', validateUser, getFavorites)
 api.post('/Favorites/:id', validateUser, insertFavorite)
 api.delete('/Favorites/:id', deleteFavorite)
+
+// ... validation ...
+api.post('/validate',validateUser, validateUserPrivate)
 

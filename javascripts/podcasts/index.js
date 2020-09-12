@@ -52,7 +52,7 @@ async function audiosForHer(){
             titleText.className = "item-2"
             titleText.innerHTML = datos.Title
         const user = document.createElement("a") 
-            user.setAttribute("href", "profile.html")
+            user.setAttribute("href", "publicProfile.html")
         const userText = document.createElement("h4")
             userText.className = "item-2"  
             userText.innerHTML = datos.User
