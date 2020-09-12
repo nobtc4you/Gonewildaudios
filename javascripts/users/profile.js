@@ -46,14 +46,16 @@ async function validateUser(){
         body: JSON.stringify(data)
     })
     const respJson = await resp.json()
-    return respJson
+    if(respJson.error){
+        return "false"
+    }else{ return respJson }
+    
 }
 async function getUserAudios(id){
     const resp = await fetch(url+"/Podcasts/User/"+id)
     const datos = await resp.json()
     const validate = await validateUser()
-    console.log(validate)
-    if(validate === "false"){
+    if(validate == "false"){
         datos.forEach(audio => {
             const audiosList = document.createElement("div")
                 audiosList.className = "songlists"
@@ -72,8 +74,7 @@ async function getUserAudios(id){
             const more = document.createElement("i")
                 more.className = "material-icons"
                 more.innerHTML = "more_horiz"
-                console.log("ESTOOOO "+ JSON.stringify(audio))
-            titleAnchor.appendChild(title)
+                titleAnchor.appendChild(title)
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)
             audiosList.appendChild(audioText)
@@ -104,7 +105,6 @@ async function getUserAudios(id){
                 btnDelete.innerHTML = "DELETE"
                 btnDelete.addEventListener("click", async () =>{
                     const idAudio = audio.Id
-                    console.log(idAudio)
                     const token = sessionStorage.getItem("token")
                     const resp = await fetch(url+"/Podcast/"+ idAudio,{
                         method: 'delete',
@@ -114,10 +114,8 @@ async function getUserAudios(id){
                         },
                     })
                     const respJson = await resp.json()
-                    console.log(respJson) 
                     location.reload()
                 })
-                            console.log("ESTOOOO "+audio.Id)
             titleAnchor.appendChild(title)
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)

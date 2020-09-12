@@ -3,7 +3,7 @@ const DataBase = new sequelize(process.env.DB_URL)
 module.exports = {
     getAllPodcast: (req,res) => {
         const limit = req.query.limit  
-        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id LIMIT '${limit}' `, { type: sequelize.QueryTypes.SELECT })
+        DataBase.query(`SELECT Podcasts.*, Users.User FROM Podcasts JOIN Users ON UserId = Users.id LIMIT ${limit} `, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
     }, 

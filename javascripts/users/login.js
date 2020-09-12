@@ -8,7 +8,6 @@ async function login (e) {
     const userInput = email.value.toLowerCase();
     const passwordInput = password.value
     const body = {"User": userInput, "Password": passwordInput}
-    console.log (JSON.stringify(body))
     const resp = await fetch( url , {
        method: 'post',
        headers:{
@@ -17,9 +16,12 @@ async function login (e) {
        body: JSON.stringify(body)
      });
     const datos = await resp.json()
-    console.log(datos)
-    sessionStorage.setItem('token', datos.token)
-    return datos
+    if(datos.token){
+      sessionStorage.setItem('token', datos.token)
+      window.location.replace("index.html")
+    }else{ alert("Usuario o contraseña incorrectos")}
+    
+    
 }
 submit.addEventListener("click",login)
 

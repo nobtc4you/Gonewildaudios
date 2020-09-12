@@ -1,6 +1,4 @@
-import {tags} from "../tags.js"
-import {getpodcast} from "./generaldetail.js"
-console.log(tags)
+import {tags} from "./tags.js"
 
 const topTags = document.getElementById("toptags")
 
@@ -9,12 +7,11 @@ let i = 0
 
 while (i < 9) {
     const n = Math.floor(Math.random() * 10)
-    const random = tags[n]
+    const random = tags.tags[n]
     if(!arrayTag.includes(random) ) {
         arrayTag.push(random);
         i++
     }
-
 }
 
 arrayTag.forEach(tag => {
@@ -23,6 +20,10 @@ arrayTag.forEach(tag => {
     button.setAttribute("src", "#")
     button.innerHTML = "# "+ tag
     topTags.appendChild(button)
+    button.addEventListener("click", ()=>{
+        window.location.replace("search.html")
+        localStorage.setItem("tag", tag)
+    })
 
 })
 
@@ -34,10 +35,9 @@ const url = "http://127.0.0.1:3000"
 audiosForHer()
 
 async function audiosForHer(){
-    const resp = await fetch(url+"/Podcasts?limit=3")
+    const resp = await fetch(url+"/Podcasts/all?limit=3")
     const datos = await resp.json()
-    console.log(datos)
-    datos.forEach (datos => {        
+     datos.forEach (datos => {        
         const divAudioList = document.createElement("a")
             divAudioList.setAttribute("href", "generaldetail.html")
             divAudioList.className = "songlists"

@@ -52,17 +52,13 @@
       <main>
         <br>
         <form action="search.html" method="GET">
-            <!-- <div class="search-bar">
-              <div class="autocomplete "  id="resultPost">
-                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" id="searchInput" autocomplete="off" >
-            </div>
-   -->            <input type="search" name="search" class="search-box" autocomplete="off" id = "searchInput">
+          <input type="text" name="search" class="search-box" autocomplete="off" id = "searchInput" >
               <button type="submit" class="search-button"><span class="icon"><i class="fa fa-search"></i></span><p style="margin: 0px 4px;">SEARCH</p></button>
             </div>
        
       </form>
       <h1 class="display-resultados"></h1>
-      <div class="main-detail-containter">
+      <div class="main-detail-containter" id="placeAudios">
             <ul class="lista">
               <img src="imagenes/dancing search.gif" alt="" width="100%">
             </ul>
@@ -88,7 +84,7 @@
         </div>
         
       </footer>
-      <script type="module" src="javascripts/tags.js"></script>
-      <script type="module" src="javascripts/podcasts/search.js"></script>
+      <script type="module" src="/javascripts/tags.js"></script>
+      <script type="module" src="/javascripts/podcasts/search.js"></script>
 </body>
 </html>
