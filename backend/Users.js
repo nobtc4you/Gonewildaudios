@@ -69,10 +69,11 @@ module.exports ={
     
     },
     updateUser: (req, res) => { 
-        const id = req.user.user.id
+        const id = req.user.user.Id
         const password = req.body.Password
         const aboutMe = req.body.AboutMe
-        DataBase.query(`UPDATE Users SET password = ${password}, About_me = "${aboutMe}" WHERE id = ${id}`,{type: sequelize.QueryTypes.SET})
+        const photo = req.body.Photo
+        DataBase.query(`UPDATE Users SET Password = "${password}", About_me = "${aboutMe}", ProfilePhoto = "${photo}" WHERE Id = ${id}`,{type: sequelize.QueryTypes.SET})
         .then(result => (console.log(result)) || res.status(200).json("Usuario Actualizado"))
         .catch(error => console.log(error) || res.status(400).send('Invalid data')) 
     },

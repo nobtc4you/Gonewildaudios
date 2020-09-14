@@ -5,6 +5,7 @@ const pronouns = document.getElementById("pronouns")
 const aboutMe = document.getElementById("aboutMe")
 const myAudios= document.getElementById("myAudios")
 const btnAboutMe = document.getElementById("btns")
+const profilePhoto = document.getElementById("profilePhoto")
 const url = "http://127.0.0.1:3000"
 
 const getId = localStorage.getItem("userId");
@@ -15,6 +16,9 @@ async function getUser (id){
     const datos = await resp.json()
         username.innerHTML = datos[0].User;
         aboutMe.innerHTML = datos[0].About_me
+    console.log(datos[0].ProfilePhoto)
+/*     const objectURL = URL.createObjectURL(datos[0].ProfilePhoto)
+        profilePhoto.setAttribute("src", objectURL) */
     const validate = await validateUser()
     if(validate !== "false"){
         const bluePrint = document.createElement("a")
