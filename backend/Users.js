@@ -1,10 +1,12 @@
 const sequelize = require('sequelize');
 const DataBase = new sequelize(process.env.DB_URL)
 const jwt = require('jsonwebtoken');
- 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 module.exports ={
-    getUserbyId:(req,res)=> {
+    getUserbyId: async (req,res)=> {
         const id = req.params.id
         DataBase.query(`SELECT * FROM users WHERE Id = "${id}"`, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
@@ -32,7 +34,8 @@ module.exports ={
         }
     },
     signUp: (req, res) =>{
-        DataBase.query(
+             
+    DataBase.query(
             'INSERT INTO Users (User, Mail, Password, About_me) VALUES (:User, :Mail, :Password, :About_me)',{
                 replacements: req.body
             }).then(result => console.log(result) || res.status(200).json('User sign up: Ok'))
@@ -66,7 +69,6 @@ module.exports ={
         }else { 
             res.json('Usuario o contraseña incorrectos!')
         }
-    
     },
     updateUser: (req, res) => { 
         const id = req.user.user.Id
@@ -90,8 +92,7 @@ module.exports ={
         const resp = await DataBase.query(`SELECT * FROM Users WHERE Id = ${idToken}`, { type: sequelize.QueryTypes.SELECT })
 
         if(resp[0].Id == idUser){
-            console.log("mira" + idUser)
             res.json(idToken);
         }else { res.json("false")} 
-    }
+    },
 } 

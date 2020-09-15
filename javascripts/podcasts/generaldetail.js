@@ -15,7 +15,6 @@ async function getpodcast (id){
         username.innerHTML = datos[0].User;
         description.innerHTML = datos[0].Description
     const tagsArray = datos[0].Tags.split(", ")
-        console.log(tagsArray)
         tagsArray.forEach (tag => {
             const tagBtn = document.createElement("a")
             tagBtn.className = "tagView"
@@ -30,8 +29,6 @@ async function getpodcast (id){
     like.addEventListener("click", addFavorite)
     async function addFavorite(){ 
         const token = sessionStorage.getItem("token")
-        console.log(token)
-
         const resp = await fetch( url+"/Favorites/"+ datos[0].Id , {
             method: 'post',
             headers:{
@@ -40,7 +37,6 @@ async function getpodcast (id){
             }
         });
     const jsonResp = await resp.json();
-    console.log(jsonResp);
     }
 
 }

@@ -10,7 +10,6 @@ async function register (e) {
     const userInput = user.value.toLowerCase()
     const emailInput = email.value.toLowerCase()
     const body = {"User": userInput, "Mail": emailInput, "Password": password.value, "About_me":" "}
-    console.log (JSON.stringify(body))
     const resp = await fetch( url , {
        method: 'post',
        headers:{
@@ -19,21 +18,18 @@ async function register (e) {
        body: JSON.stringify(body)
      });
     const datos = await resp.json()
-    console.log(datos)
     return datos
 }
 async function checkUser (){
   const userInput = user.value.toLowerCase() 
   const resp = await fetch (`${url}/${userInput}`);
   const datos = await resp.json();
-  console.log(datos);
   document.getElementById('usernameInfo').innerHTML = datos
 }
 async function checkMail (){
   const emailInput = email.value.toLowerCase()
   const resp = await fetch (`${url}/user/${emailInput}`);
   const datos = await resp.json();
-  console.log(datos);
   document.getElementById('emailInfo').innerHTML = datos;
 }
 submit.addEventListener("click",register)

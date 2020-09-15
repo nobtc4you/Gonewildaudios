@@ -4,7 +4,7 @@ const DataBase = new sequelize(process.env.DB_URL)
 module.exports = {
     getFavorites: (req,res) => {
         const userId = req.user.user.Id
-        DataBase.query(`SELECT * FROM Favorites WHERE UserId = ${userId}` , { type: sequelize.QueryTypes.SELECT })
+        DataBase.query(`SELECT f.*,u.User, p.Title FROM Favorites f JOIN Users u ON f.UserId = u.Id JOIN Podcasts p ON f.PodcastId = p.Id WHERE f.UserId = ${userId}` , { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
     },

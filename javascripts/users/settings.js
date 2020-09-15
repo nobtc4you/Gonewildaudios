@@ -6,14 +6,13 @@ const update = document.getElementById("update")
 const url = "http://127.0.0.1:3000/Users"
 
 foto.addEventListener("change", () =>{
-    console.log("test")
+    
 })
-
+/* Aca agregar el valor de la foto */
 update.addEventListener("click", async (e) => {
     e.preventDefault()
     const token = sessionStorage.getItem("token")
-    const body = {"Password": password.value, "AboutMe": aboutMe.value, "Photo": foto.value }
-    console.log (JSON.stringify(body))
+    const body = {"Password": password.value, "AboutMe": aboutMe.value, "Photo": ""}
     const resp = await fetch( url , {
        method: 'put',
        headers:{
@@ -23,5 +22,4 @@ update.addEventListener("click", async (e) => {
        body: JSON.stringify(body)
      });
      const datos = await resp.json()
-     console.log(datos)
 })
