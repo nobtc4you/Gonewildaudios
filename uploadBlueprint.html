@@ -54,10 +54,10 @@
     <div class="uploadColumns">
         <div class="profileLeft">
             <img src="imagenes/cam.jpg" alt="">
-            <h2>USERNAME</h2>
+            <h2 id= "username"></h2>
             <h4>pronouns: <span style="color:#7acfe8;">THEY/THEM</span></h4>
             <h3>about me:</h3>
-            <div class="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id voluptatibus aliquid totam fuga a doloremque similique sit eligendi, fugiat aliquam? Maxime natus aut perferendis nostrum iste deleniti velit modi eos!</div>
+            <div class="bio" id ="aboutMe"></div>
             <a href="profile.html">
                 <button type="button" class="btn btn-secondary">CANCEL</button> 
             </a>
@@ -84,8 +84,8 @@
 What is going on? Who's participating? Why should i listen to it?"></textarea>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Share your script</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Did you write it down? did someone do it for you? (please give credit, intellectual theft is NOT COOL).
+                <label for="exampleFormControlTextarea2">Share your script</label>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="5" placeholder="Did you write it down? did someone do it for you? (please give credit, intellectual theft is NOT COOL).
 Either way, we wanna see it! 
 Some of us have trouble following without visual aid..."></textarea>
             </div>
@@ -93,14 +93,14 @@ Some of us have trouble following without visual aid..."></textarea>
                 <div class="form-group row">
                     <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">TAGS:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="INSERT #">
+                        <input type="text" class="form-control form-control-sm" id="tags" placeholder="INSERT #">
                     </div>
                 </div>
             </form>
             <div class="likedAudios">
                 <p>Wanna add a picture that represents what you're about to post?</p>
             </div>
-            <button type="button" class="btn btn-success">PUBLISH</button>
+            <button type="button" class="btn btn-success" id="publish">PUBLISH</button>
         </div>
     </div>
     <footer>
@@ -121,5 +121,6 @@ Some of us have trouble following without visual aid..."></textarea>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="javascripts/podcasts/upload.js"></script>
 </body>
 </html>

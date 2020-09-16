@@ -45,8 +45,8 @@ module.exports ={
     logIn: async (req,res) =>{
         const reqUser = req.body.User
         const reqPass = req.body.Password
-        const password = await DataBase.query(`SELECT Id, Password FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
-        const isAdmin = await DataBase.query(`SELECT Id, IsAdmin FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const password = await DataBase.query(`SELECT Id, User, Password FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
+        const isAdmin = await DataBase.query(`SELECT Id, User, IsAdmin FROM Users WHERE User = "${reqUser}" OR Mail = "${reqUser}"`, { type: sequelize.QueryTypes.SELECT })
         const passwordOk = password[0].Password
         const adminOk = isAdmin.find(item => item.is_admin === 1)
        
@@ -72,10 +72,8 @@ module.exports ={
     },
     updateUser: (req, res) => { 
         const id = req.user.user.Id
-        const password = req.body.Password
-        const aboutMe = req.body.AboutMe
-        const photo = req.body.Photo
-        DataBase.query(`UPDATE Users SET Password = "${password}", About_me = "${aboutMe}", ProfilePhoto = "${photo}" WHERE Id = ${id}`,{type: sequelize.QueryTypes.SET})
+        const {password, aboutMe, photo, gender, pronouns} = req.body
+        DataBase.query(`UPDATE Users SET Password = "${password}", About_me = "${aboutMe}", ProfilePhoto = "${photo}", Gender = "${gender}, Pronouns = "${pronouns}" WHERE Id = ${id}`,{type: sequelize.QueryTypes.SET})
         .then(result => (console.log(result)) || res.status(200).json("Usuario Actualizado"))
         .catch(error => console.log(error) || res.status(400).send('Invalid data')) 
     },
@@ -94,5 +92,5 @@ module.exports ={
         if(resp[0].Id == idUser){
             res.json(idToken);
         }else { res.json("false")} 
-    },
+    }
 } 

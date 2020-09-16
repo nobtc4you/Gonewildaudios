@@ -49,8 +49,9 @@
                 <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
       <a class="nav_text" href="index.html">HOME</a>
       <a class="nav_text" href="contact.html">CONTACT</a>
-      <a class="nav_text" href="register.html">SIGN UP</a>
-      <a class="nav_text" href="login.html">LOG IN</a>
+      <a class="nav_text" href="register.html" id="signUpMenu">SIGN UP</a>
+      <a class="nav_text" href="login.html" id ="logInMenu">LOG IN</a>
+      <a class="none" href="publicProfile.html" id ="profileMenu">MY PROFILE</a>
       <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
             </div>
           </nav> 
@@ -80,7 +81,7 @@
                 <label for="exampleFormControlTextarea1">Tell us a little bit about yourself</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="You can write whatever you think represents you for everyone to see"></textarea>
               </div>
-              <label for="exampleFormControlTextarea1">Change your email</label>
+<!--               <label for="exampleFormControlTextarea1">Change your email</label>
               <form class="form-inline">
                 
                 <div class="form-group mx-sm-3 mb-2">
@@ -88,20 +89,20 @@
                   <input type="password" class="form-control" id="inputPassword2" placeholder="New email">
                 </div>
                 <button type="submit" class="btn btn-warning mb-2">Change</button>
-              </form>
+              </form> -->
 
-    <!--           <label for="exampleFormControlTextarea1">Change your password</label>
+    <label for="exampleFormControlTextarea1">Change your password</label>
               <form class="form-inline">
-                <div class="form-group mx-sm-3 mb-2">
+                <!-- <div class="form-group mx-sm-3 mb-2">
                   <label for="inputPassword2" class="sr-only">New email</label>
                   <input type="password" class="form-control" id="inputPassword2" placeholder="Old password">
-                </div> -->
-<!--                 <div class="form-group mx-sm-3 mb-2">
+                </div>  -->
+          <div class="form-group mx-sm-3 mb-2">
                   <label for="inputPassword2" class="sr-only"> New Password</label>
                   <input type="password" class="form-control" id="inputPassword2" placeholder="New password">
-                </div> -->
-<!--                 <button type="submit" class="btn btn-warning mb-2">Change</button>
-              </form> -->
+                </div> 
+           <!-- <button type="submit" class="btn btn-warning mb-2">Change</button> -->
+              </form>
 
             <form>
                 <div class="form-group">
@@ -112,7 +113,7 @@
               
            
             <button type="button" class="btn btn-primary" id= "update">UPDATE</button>
-            <button type="button" class="btn btn-danger">DELETE ACCOUNT</button>
+            <button type="button" class="btn btn-danger" id = "deleteAccount">DELETE ACCOUNT</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

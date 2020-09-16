@@ -32,6 +32,10 @@ async function getUser (id){
         settings.appendChild(btnSettings)
         btnAboutMe.appendChild(bluePrint)
         btnAboutMe.appendChild(settings)
+        btnUpload.addEventListener("click", () => {
+            localStorage.setItem("user", datos[0].User);
+            localStorage.setItem("aboutme", datos[0].About_me);
+        })
     }
 }
 getUserAudios(getId)

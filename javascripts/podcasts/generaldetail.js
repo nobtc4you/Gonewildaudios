@@ -28,6 +28,7 @@ async function getpodcast (id){
 
     like.addEventListener("click", addFavorite)
     async function addFavorite(){ 
+        console.log("probando")
         const token = sessionStorage.getItem("token")
         const resp = await fetch( url+"/Favorites/"+ datos[0].Id , {
             method: 'post',

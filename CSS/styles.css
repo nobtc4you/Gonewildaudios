@@ -901,7 +901,9 @@ img.search-img {
   line-height: 20px;
 }
 
-
+.none{
+  display: none;
+}
 /*MEDIA QUERIES*/
 
 @media(max-width:768px){  

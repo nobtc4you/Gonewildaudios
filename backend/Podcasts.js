@@ -30,7 +30,7 @@ module.exports = {
         const UserId = req.user.user.Id
 
             DataBase.query(            
-            `INSERT INTO Podcasts (Title, Tags, File, UserId) VALUES (:Title, :Tags, :File, ${UserId})`,{
+            `INSERT INTO Podcasts (Title, Tags, File, Description, Script, UserId) VALUES (:Title, :Tags, :File, Description, Script, ${UserId})`,{
                 replacements: req.body
             }).then(result => console.log(result) || res.status(200).json('Podcast added.'))
               .catch(error => console.log(error) || res.status(400).send('Invalid data'))
@@ -39,7 +39,7 @@ module.exports = {
     updatePodcast: (req, res) => {
         const id = req.params.id
         const userId = req.user.user.Id
-        const {Title, Tags, File} = req.body
+        const {Title, Tags, File, Description, Script} = req.body
         const isAdimn = req.user.user.isAdmin
         if(isAdimn){
             DataBase.query(`UPDATE Podcasts SET Title = '${Title}', Tags = '${Tags}', File ='${File}'  WHERE Id = ${id}`,{type: sequelize.QueryTypes.SET})
