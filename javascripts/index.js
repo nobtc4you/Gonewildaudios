@@ -2,6 +2,7 @@ import {tags} from "./tags.js"
 
 const topTags = document.getElementById("toptags")
 
+
 let arrayTag = []
 let i = 0
 
@@ -13,11 +14,12 @@ while (i < 9) {
         i++
     }
 }
-
-if(sessionStorage.getItem("token")){
+const idLoggedIn = sessionStorage.getItem("userLoggedIn")
+if(idLoggedIn){
     const signUp = document.getElementById("signUpMenu")
     const logIn = document.getElementById("logInMenu")
     const profile = document.getElementById("profileMenu")
+    profile.addEventListener("click",()=>{localStorage.setItem("userId", idLoggedIn)})
 
     signUp.className = "none"
     logIn.className = "none"

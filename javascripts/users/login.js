@@ -18,6 +18,7 @@ async function login (e) {
     const datos = await resp.json()
     if(datos.token){
       sessionStorage.setItem('token', datos.token)
+      sessionStorage.setItem('userLoggedIn', datos.user.Id)
       window.location.replace("index.html")
     }else{ alert("Usuario o contraseña incorrectos")}
     

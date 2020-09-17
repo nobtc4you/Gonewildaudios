@@ -8,6 +8,7 @@ const favoritesPlace = document.getElementById("favorites")
 const url = "http://127.0.0.1:3000"
 
 const getId = localStorage.getItem("userId");
+const idloggedin = sessionStorage.getItem("userLoggedIn")
 
 getUser(getId)
 async function getUser (id){
@@ -17,7 +18,7 @@ async function getUser (id){
         aboutMe.innerHTML = datos[0].About_me
 /*         profilePhoto.setAttribute("src", "" )AGREGAR FOTO */ 
     const validate = await validateUser()
-    if(validate !== "false"){
+    if(validate){
         const bluePrint = document.createElement("a")
             bluePrint.href= "uploadBlueprint.html"
         const btnUpload = document.createElement("button")
@@ -40,27 +41,16 @@ async function getUser (id){
 }
 getUserAudios(getId)
 async function validateUser(){
-    const token = sessionStorage.getItem("token")
-    const data = {"id": getId}
-    const resp = await fetch(url+"/validate",{
-        method: 'post',
-        headers:{
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer '+token
-        },
-        body: JSON.stringify(data)
-    })
-    const respJson = await resp.json()
-    if(respJson.error){
-        return "false"
-    }else{ return respJson }
-    
+    if(getId == idloggedin ){
+        return getId
+    }else {return false}
 }
 async function getUserAudios(id){
     const resp = await fetch(url+"/Podcasts/User/"+id)
     const datos = await resp.json()
     const validate = await validateUser()
-    if(validate == "false"){
+    console.log(validate)
+    if(!validate){
         datos.forEach(audio => {
             const audiosList = document.createElement("div")
                 audiosList.className = "songlists"

@@ -54,7 +54,8 @@
     <div class="uploadColumns">
         <div class="profileLeft">
             <img src="imagenes/cam.jpg" alt="">
-            <h2 id= "username"></h2>
+            <h2>USERNAME</h2>
+            <h5 class="gender">input gender</h5>
             <h4>pronouns: <span style="color:#7acfe8;">THEY/THEM</span></h4>
             <h3>about me:</h3>
             <div class="bio" id ="aboutMe"></div>
@@ -68,7 +69,12 @@
         <div class="uploadRight">
             <h2>UPLOAD</h2>
             <div class="likedAudios">
-                <p>Drag file or search from computer :)</p>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Wow! An audio!</label>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                  </form>
             </div>
             <form>
                 <div class="form-group row">
@@ -98,7 +104,12 @@ Some of us have trouble following without visual aid..."></textarea>
                 </div>
             </form>
             <div class="likedAudios">
-                <p>Wanna add a picture that represents what you're about to post?</p>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Wanna add a picture that represents what you're about to post?</label>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                  </form>
             </div>
             <button type="button" class="btn btn-success" id="publish">PUBLISH</button>
         </div>

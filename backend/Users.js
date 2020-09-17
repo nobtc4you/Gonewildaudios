@@ -56,7 +56,7 @@ module.exports ={
                 const token = jwt.sign({
                     user
                 }, process.env.FIRM_JWT)
-                res.json({token})
+                res.json({token, user})
             }else { 
                 const user = isAdmin[0]
                 const token = jwt.sign({
@@ -82,7 +82,7 @@ module.exports ={
             DataBase.query(`DELETE FROM Users WHERE id = ${id}`,{type: sequelize.QueryTypes.DELETE})
             .then(result => (console.log(result)) || res.status(200).json("User eliminated."))
             .catch(error => console.log(error) || res.status(400).send('Invalid data'))  
-    },
+    }/* ,
     validateUserPrivate: async (req,res) => {
         const idToken = req.user.user.Id
         
@@ -92,5 +92,5 @@ module.exports ={
         if(resp[0].Id == idUser){
             res.json(idToken);
         }else { res.json("false")} 
-    }
+    } */
 } 
