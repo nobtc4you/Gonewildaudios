@@ -251,8 +251,9 @@ nav > ul > li:first-child {
   margin-right: 5px;
   margin-bottom: 5px;
   overflow:auto;
-  display: inline-block;
   cursor: pointer;
+  float: left;
+  font-size: small;
 }
 
 .registerBox{
@@ -529,6 +530,7 @@ nav > ul > li:first-child {
 .song-text {
     margin-left: 13px;
     padding: 0;
+    margin-bottom: 8px;
 }
 
 .song-text p {
