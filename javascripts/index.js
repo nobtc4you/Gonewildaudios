@@ -51,7 +51,6 @@ async function audiosForHer(){
     const datos = await resp.json()
      datos.forEach (datos => {        
         const divAudioList = document.createElement("a")
-            divAudioList.setAttribute("href", "generaldetail.html")
             divAudioList.className = "songlists"
         const songImg = document.createElement("img")
             songImg.className = "songlistsImg"
@@ -59,7 +58,8 @@ async function audiosForHer(){
             songImg.setAttribute("width", "100%")
         const songText = document.createElement("div")
             songText.className = "song-text"
-        const title = document.createElement("a")  
+        const title = document.createElement("a")
+            title.setAttribute("href", "generaldetail.html")  
         const titleText = document.createElement("h4")
             titleText.className = "item-2"
             titleText.innerHTML = datos.Title
@@ -68,6 +68,18 @@ async function audiosForHer(){
         const userText = document.createElement("h4")
             userText.className = "item-2"  
             userText.innerHTML = datos.User
+        const tagsArray = datos.Tags.split(",")
+        const spaceBtnTags = document.createElement("div")
+        tagsArray.forEach(tag => {
+            const tagBtn = document.createElement("a")
+                tagBtn.className = "tagView"
+                tagBtn.innerHTML = "# "+tag 
+                spaceBtnTags.appendChild(tagBtn)                
+                tagBtn.addEventListener("click", ()=>{
+                    localStorage.setItem("tag", tag)
+                    window.location.replace("search.html")
+                })
+            })
         const more = document.createElement("i")
             more.className = "material-icons"
             more.innerHTML = "more_horiz"
@@ -76,6 +88,7 @@ async function audiosForHer(){
         user.appendChild(userText)
         songText.appendChild(title)
         songText.appendChild(user)
+        songText.appendChild(spaceBtnTags)
         divAudioList.appendChild(songImg)
         divAudioList.appendChild(songText)
         divAudioList.appendChild(more)

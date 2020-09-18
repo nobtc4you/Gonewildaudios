@@ -46,8 +46,9 @@
         <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
         <a class="nav_text" href="index.html">HOME</a>
         <a class="nav_text" href="contact.html">CONTACT</a>
-        <a class="nav_text" href="register.html">SIGN UP</a>
-        <a class="nav_text" href="login.html">LOG IN</a>
+        <a class="nav_text" href="register.html" id="signUpMenu">SIGN UP</a>
+        <a class="nav_text" href="login.html" id ="logInMenu">LOG IN</a>
+        <a class="none" href="publicProfile.html" id ="profileMenu">MY PROFILE</a>
         <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
     </div>
   </nav> 
@@ -61,7 +62,7 @@
           <div class="text-grid">
             <h2 class="titulo-detalle" id="titlePodcast"></h2>
             <div class="social_followers">
-              <p class="followers" id="like">♡ Like this audio</p> <!--❤ corazón relleno-->
+              <p class="followers" id="like"><span id="heart">♡</span> Like this audio</p> <!--❤ corazón relleno-->
             </div>
             <div class="subtitulo1">
               <a href="#"> <!-- debería ser el link al perfil del artista -->
@@ -81,7 +82,7 @@
         </div>
     </main>
     <h3>Need the script?</h3>
-    <div class="script">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque facere nemo hic expedita placeat libero provident veritatis rem corrupti, qui neque quam corporis nostrum iste sapiente odit vel temporibus deserunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque facere nemo hic expedita placeat libero provident veritatis rem corrupti, qui neque quam corporis nostrum iste sapiente odit vel temporibus deserunt?</div>
+    <div class="script" id="script"></div>
     <footer>
       <div class="grid-footer-container">
  

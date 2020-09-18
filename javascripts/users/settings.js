@@ -4,12 +4,13 @@ const aboutMe = document.getElementById("exampleFormControlTextarea1")
 const update = document.getElementById("update")
 const gender = document.getElementById("inputCity")
 const pronouns = document.getElementById("inputState")
+const deleteBtn = document.getElementById("deleteAccount")
 
 
 const url = "http://127.0.0.1:3000"
 getUsersDetails()
 
-  if(sessionStorage.getItem("token")) {
+  if(sessionStorage.getItem("userLoggedIn")) {
       const signUp = document.getElementById("signUpMenu")
       const logIn = document.getElementById("logInMenu")
       const profile = document.getElementById("profileMenu")
@@ -32,7 +33,8 @@ async function getUsersDetails(){
     if(datos[0].About_me){
       aboutMe.value = datos[0].About_me
     } 
-    password.value = datos[0].password
+    password.value = datos[0].Password
+
 }
 
 /* Aca agregar el valor de la foto */
@@ -42,7 +44,7 @@ update.addEventListener("click", async (e) => {
     const token = sessionStorage.getItem("token")
     const body = {"Password": password.value, "AboutMe": aboutMe.value, "Photo": "", "Gender":gender.value ,"Pronouns": pronouns.value}
     const JsonBody = JSON.stringify(body)
-     const resp = await fetch( url+"/Users" , {
+    const resp = await fetch( url+"/Users" , {
        method: 'put',
        headers:{
         'Content-Type': 'application/json',
@@ -71,3 +73,17 @@ async function validateUser(){
   }else{ return respJson }
   
 }
+deleteBtn.addEventListener("click",async ()=>{
+  const token = sessionStorage.getItem("token")
+  const resp = await fetch(url+"/Users", {
+    method: 'delete',
+    headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer '+ token
+    }
+  })
+    const respJson = await resp.json()
+    sessionStorage.removeItem("userLoggedIn")
+
+    window.location.replace("index.html")
+})

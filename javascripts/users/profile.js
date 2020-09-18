@@ -10,12 +10,27 @@ const url = "http://127.0.0.1:3000"
 const getId = localStorage.getItem("userId");
 const idloggedin = sessionStorage.getItem("userLoggedIn")
 
+
+
+if(sessionStorage.getItem("userLoggedIn")){
+    const signUp = document.getElementById("signUpMenu")
+    const logIn = document.getElementById("logInMenu")
+    const profile = document.getElementById("profileMenu")
+
+    signUp.className = "none"
+    logIn.className = "none"
+    profile.className = "nav_text"
+}
+
+
+
 getUser(getId)
 async function getUser (id){
     const resp = await fetch(url+"/User/"+id)
     const datos = await resp.json()
         username.innerHTML = datos[0].User;
         aboutMe.innerHTML = datos[0].About_me
+        pronouns.innerHTML = datos[0].Pronouns
 /*         profilePhoto.setAttribute("src", "" )AGREGAR FOTO */ 
     const validate = await validateUser()
     if(validate){

@@ -3,6 +3,15 @@ const input = document.getElementById("searchInput")
 const placeAudios = document.getElementById("placeAudios")
 const url = "http://127.0.0.1:3000"
 
+if(sessionStorage.getItem("userLoggedIn")){
+    const signUp = document.getElementById("signUpMenu")
+    const logIn = document.getElementById("logInMenu")
+    const profile = document.getElementById("profileMenu")
+
+    signUp.className = "none"
+    logIn.className = "none"
+    profile.className = "nav_text"
+}
 
 input.addEventListener("keyup", ()=>{
     const inputvalue = input.value
@@ -11,7 +20,8 @@ input.addEventListener("keyup", ()=>{
         placeAudios.innerHTML =""
     }
 })
-input.value = localStorage.getItem("tag")  
+input.value = localStorage.getItem("tag") 
+audiosEncontrados() 
 
  
 async function audiosEncontrados(){

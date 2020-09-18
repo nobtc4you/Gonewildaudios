@@ -78,7 +78,7 @@ module.exports ={
         .catch(error => console.log(error) || res.status(400).send('Invalid data')) 
     },
     deleteUser: (req, res) => { 
-        const id = req.params.id   
+        const id = req.user.user.Id   
             DataBase.query(`DELETE FROM Users WHERE id = ${id}`,{type: sequelize.QueryTypes.DELETE})
             .then(result => (console.log(result)) || res.status(200).json("User eliminated."))
             .catch(error => console.log(error) || res.status(400).send('Invalid data'))  
