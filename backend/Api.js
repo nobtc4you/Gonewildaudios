@@ -9,6 +9,7 @@ const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, delet
 const {getAllPodcast, getPodcastByTag, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
+const {uploadImg} = require("./uploadImg")
 
 
 api.listen(3000,()=> console.log('servidor iniciado...'))

@@ -1,5 +1,8 @@
 const sequelize = require('sequelize');
 const DataBase = new sequelize(process.env.DB_URL)
+var AWS = require('aws-sdk');
+
+
 module.exports = {
     getAllPodcast: (req,res) => {
         const limit = req.query.limit  
