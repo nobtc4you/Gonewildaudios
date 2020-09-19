@@ -74,16 +74,5 @@ async function validateUser(){
   
 }
 deleteBtn.addEventListener("click",async ()=>{
-  const token = sessionStorage.getItem("token")
-  const resp = await fetch(url+"/Users", {
-    method: 'delete',
-    headers:{
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+ token
-    }
-  })
-    const respJson = await resp.json()
-    sessionStorage.removeItem("userLoggedIn")
-
-    window.location.replace("index.html")
+  window.location.replace("confirmationaccountdeletion.html")
 })

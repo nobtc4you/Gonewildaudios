@@ -68,7 +68,8 @@ async function audiosForHer(){
         const userText = document.createElement("h4")
             userText.className = "item-2"  
             userText.innerHTML = datos.User
-        const tagsArray = datos.Tags.split(",")
+        const allTagsArray = datos.Tags.split(",")
+        const tagsArray = allTagsArray.slice(0,3)
         const spaceBtnTags = document.createElement("div")
         tagsArray.forEach(tag => {
             const tagBtn = document.createElement("a")

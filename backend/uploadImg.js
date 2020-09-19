@@ -1,4 +1,4 @@
-const upload = require("./file-upload")
+/* const upload = require("./file-upload")
 
 const singleUpload = upload.single('image')
 
@@ -7,3 +7,4 @@ function uploadImg (req,res){
         return res.json({'imageUrl': req.file.location})
     })
    }
+ */

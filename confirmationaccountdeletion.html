@@ -39,9 +39,7 @@
       <a class="icon_desktop" href="index.html"><img src="imagenes/logos/blue.png" width="130px"></a>
       <a class="nav_text" href="index.html">HOME</a>
       <a class="nav_text" href="contact.html">CONTACT</a>
-      <a class="nav_text" href="register.html" id="signUpMenu">SIGN UP</a>
-      <a class="nav_text" href="login.html" id ="logInMenu">LOG IN</a>
-      <a class="none" href="publicProfile.html" id ="profileMenu">MY PROFILE</a>
+      <li class="hidden"><a href="profile.html">YOUR PROFILE</a></li>
       <a class="nav_text search-desktop" href="search.html"><span class="material-icons">search</span></a>
   </div>
   </nav>  
@@ -59,7 +57,7 @@
               <label for="inputPassword2" class="sr-only">Password</label>
               <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-danger mb-2">DELETE ACCOUNT</button>
+            <button type="submit" class="btn btn-danger mb-2" id="delete">DELETE ACCOUNT</button>
           </form>
       </div>
       <footer>
@@ -78,7 +76,6 @@
         </div>
         
       </footer>
-      <script type="module" src="/javascripts/tags.js"></script>
-      <script type="module" src="/javascripts/podcasts/search.js"></script>
+      <script src="/javascripts/users/confirmDelete.js"></script>
 </body>
 </html>

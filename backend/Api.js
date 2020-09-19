@@ -5,7 +5,7 @@ if(process.env.NODE_ENV === "development"){
 const api = require('express')();
 const bodyParserJson = require('body-parser').json();
 const cors = require('cors');
-const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser} = require('./Users')
+const {getUserbyId, verifyUsername, verifyMail, signUp, logIn, updateUser, deleteUser, validateUserPassword} = require('./Users')
 const {getAllPodcast, getPodcastByTag, getPodcastById, getPodcastByUserId, postPodcast, updatePodcast , deletePodcast} = require('./Podcasts')
 const {getFavorites, insertFavorite, deleteFavorite} = require('./Favorites')
 const {findUser, validateUser} = require('./Middlewares')
@@ -48,5 +48,5 @@ api.post('/Favorites/:id', validateUser, insertFavorite)
 api.delete('/Favorites/:id', deleteFavorite)
 
 // ... validation ...
-/* api.post('/validate',validateUser, validateUserPrivate) */
+api.get('/validate/:id', validateUserPassword)
 
