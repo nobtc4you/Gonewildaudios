@@ -13,14 +13,11 @@ CREATE TABLE `Podcasts`(
     `Title` VARCHAR(70) NOT NULL UNIQUE,
     `Tags` VARCHAR(200),
     `File` VARCHAR (100),
-    `Description` VARCHAR(500)
-    `Script` VARCHAR(500)
+    `Description` VARCHAR(500),
+    `Script` VARCHAR(500),
     `UserId` int(19) NOT NULL);
 
 CREATE TABLE `Favorites`(
 	`Id` INT(19) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `UserId` INT(19) NOT NULL,
     `PodcastId` INT(19) NOT NULL);
-
-
-
