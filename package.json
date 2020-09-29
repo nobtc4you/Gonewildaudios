@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development nodemon backend/Api.js",
-    "start": "cross-env NODE_ENV=production node backend/Api.js"
+    "start": "cross-env NODE_ENV=production node backend/Api.js",
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
+    "mysql2": "^2.2.5",
     "sequelize": "^6.3.4"
   }
 }
