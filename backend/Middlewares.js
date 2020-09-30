@@ -1,5 +1,9 @@
 const sequelize = require('sequelize');
-const DataBase = new sequelize(process.env.DB_URL)
+// const DataBase = new sequelize(process.env.DB_URL)
+const DataBase = new sequelize(process.env.RDS_DB_NAME, process.env.RDS_USERNAME,  process.env.RDS_PASSWORD, {
+  host: process.env.RDS_HOSTNAME,
+  dialect: 'mysql'
+});
 const jwt = require('jsonwebtoken')
 
 module.exports = {
@@ -8,22 +12,21 @@ module.exports = {
         const dbFind = db.find(item => item.User || item.Mail == req.body.User)
      if(!dbFind){
             return res.status(400).json('Usuario o contraseña incorrectos!');
-        } 
-        next()  
+        }
+        next()
     },
     validateUser: (req, res, next) => {
         try{
             const token = req.headers.authorization.split(' ')[1]
             const verifyToken = jwt.verify(token, process.env.FIRM_JWT)
             if(verifyToken){
-                req.user = verifyToken;  
+                req.user = verifyToken;
                 return next()
             }
-        } catch (err){ 
-            console.log("Este error:" + err) 
+        } catch (err){
+            console.log("Este error:" + err)
             res.json({error: 'error al validar usuario'})
         }
     },
 
 }
-       

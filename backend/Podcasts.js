@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 // const DataBase = new sequelize(process.env.DB_URL)
-const DataBase = new Sequelize(process.env.RDS_DB_NAME, process.env.RDS_USERNAME,  process.env.RDS_PASSWORD, {
+const DataBase = new sequelize(process.env.RDS_DB_NAME, process.env.RDS_USERNAME,  process.env.RDS_PASSWORD, {
   host: process.env.RDS_HOSTNAME,
   dialect: 'mysql'
 });

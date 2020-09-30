@@ -28,7 +28,7 @@ api.get('/Users/user/:mail', verifyMail)
 api.post('/Users', signUp)
 api.post('/Users/login', findUser, logIn)
 api.put('/Users', validateUser, updateUser)
-api.delete('/Users', validateUser, deleteUser) 
+api.delete('/Users', validateUser, deleteUser)
 
 //... Podacast's endpoints ...
 
@@ -39,7 +39,7 @@ api.get('/Podcast/:id', getPodcastById)
 api.get('/Podcasts/User/:id', getPodcastByUserId)
 api.post('/Podcasts', validateUser, postPodcast )
 api.put('/Podcast/:id', validateUser, updatePodcast)
-api.delete('/Podcast/:id', validateUser, deletePodcast) 
+api.delete('/Podcast/:id', validateUser, deletePodcast)
 
 // ... Favorites ...
 
@@ -49,4 +49,3 @@ api.delete('/Favorites/:id', deleteFavorite)
 
 // ... validation ...
 api.get('/validate/:id', validateUserPassword)
-
