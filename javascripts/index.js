@@ -43,13 +43,14 @@ arrayTag.forEach(tag => {
 
 const forHer = document.getElementById("forHer")
 const url = "http://127.0.0.1:3000"
+// const url = "http://gwabackend.us-west-2.elasticbeanstalk.com"
 
 audiosForHer()
 
 async function audiosForHer(){
     const resp = await fetch(url+"/Podcasts/all?limit=3")
     const datos = await resp.json()
-     datos.forEach (datos => {        
+     datos.forEach (datos => {
         const divAudioList = document.createElement("a")
             divAudioList.className = "songlists"
         const songImg = document.createElement("img")
@@ -59,14 +60,14 @@ async function audiosForHer(){
         const songText = document.createElement("div")
             songText.className = "song-text"
         const title = document.createElement("a")
-            title.setAttribute("href", "generaldetail.html")  
+            title.setAttribute("href", "generaldetail.html")
         const titleText = document.createElement("h4")
             titleText.className = "item-2"
             titleText.innerHTML = datos.Title
-        const user = document.createElement("a") 
+        const user = document.createElement("a")
             user.setAttribute("href", "publicProfile.html")
         const userText = document.createElement("h4")
-            userText.className = "item-2"  
+            userText.className = "item-2"
             userText.innerHTML = datos.User
         const allTagsArray = datos.Tags.split(",")
         const tagsArray = allTagsArray.slice(0,3)
@@ -74,8 +75,8 @@ async function audiosForHer(){
         tagsArray.forEach(tag => {
             const tagBtn = document.createElement("a")
                 tagBtn.className = "tagView"
-                tagBtn.innerHTML = "# "+tag 
-                spaceBtnTags.appendChild(tagBtn)                
+                tagBtn.innerHTML = "# "+tag
+                spaceBtnTags.appendChild(tagBtn)
                 tagBtn.addEventListener("click", ()=>{
                     localStorage.setItem("tag", tag)
                     window.location.replace("search.html")
@@ -97,12 +98,12 @@ async function audiosForHer(){
         divAudioList.addEventListener("click", ()=>{
 
             localStorage.setItem("podcastId", datos.Id);
-           
+
         })
         user.addEventListener("click", ()=>{
 
             localStorage.setItem("userId", datos.UserId);
-           
+
         })
     })
 }
