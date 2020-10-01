@@ -12,13 +12,13 @@ const AWS = require('aws-sdk');
 module.exports ={
     getUserbyId: async (req,res)=> {
         const id = req.params.id
-        DataBase.query(`SELECT * FROM users WHERE Id = "${id}"`, { type: sequelize.QueryTypes.SELECT })
+        DataBase.query(`SELECT * FROM Users WHERE Id = "${id}"`, { type: sequelize.QueryTypes.SELECT })
         .then(result =>res.status(200).json(result))
         .catch(error => console.log(error) || res.status(400).json('Invalid data'))
     },
     verifyUsername: async (req,res) => {
         const user = req.params.user
-        const db = await DataBase.query(`SELECT * FROM users WHERE User = "${user}"`, {type: sequelize.QueryTypes.SELECT})
+        const db = await DataBase.query(`SELECT * FROM Users WHERE User = "${user}"`, {type: sequelize.QueryTypes.SELECT})
         const dbFind = db.find(item => item.User == user)
      if(!dbFind){
         return res.status(200).json('Correct user');
@@ -29,7 +29,7 @@ module.exports ={
     },
     verifyMail: async (req,res) => {
         const mail = req.params.mail
-        const db = await DataBase.query(`SELECT * FROM users WHERE Mail = "${mail}"`, {type: sequelize.QueryTypes.SELECT})
+        const db = await DataBase.query(`SELECT * FROM Users WHERE Mail = "${mail}"`, {type: sequelize.QueryTypes.SELECT})
         const dbFind = db.find(item => item.Mail == mail)
      if(!dbFind){
         return res.status(200).json('Correct mail');

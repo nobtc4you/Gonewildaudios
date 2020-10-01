@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = {
     findUser: async (req, res, next) => {
-        const db = await DataBase.query(`SELECT * FROM users WHERE User = "${req.body.User}" OR Mail = "${req.body.User}"`, {type: sequelize.QueryTypes.SELECT})
+        const db = await DataBase.query(`SELECT * FROM Users WHERE User = "${req.body.User}" OR Mail = "${req.body.User}"`, {type: sequelize.QueryTypes.SELECT})
         const dbFind = db.find(item => item.User || item.Mail == req.body.User)
      if(!dbFind){
             return res.status(400).json('Usuario o contraseña incorrectos!');
