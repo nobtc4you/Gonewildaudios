@@ -3,7 +3,8 @@ const password = document.getElementById ("inputPassword4");
 const user = document.getElementById ("inlineFormInputGroup");
 const submit = document.getElementById("register");
 const termsConditions = document.getElementById("gridCheck");
-const url = "http://127.0.0.1:3000/Users"
+// const url = "http://127.0.0.1:3000/Users"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000/Users"
 
 async function register (e) {
     e.preventDefault()
@@ -20,12 +21,12 @@ async function register (e) {
         });
         const datos = await resp.json()
         window.location.replace("login.html")
-        return datos 
-      } else { 
+        return datos
+      } else {
         alert("Please accept Terms and Condition")}
 }
 async function checkUser (){
-  const userInput = user.value.toLowerCase() 
+  const userInput = user.value.toLowerCase()
   const resp = await fetch (`${url}/${userInput}`);
   const datos = await resp.json();
   document.getElementById('usernameInfo').innerHTML = datos

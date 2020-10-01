@@ -12,7 +12,8 @@ const script = document.getElementById("exampleFormControlTextarea2")
 const tagsinput = document.getElementById("tags")
 const btnPublish = document.getElementById("publish")
 
-const url = "http://127.0.0.1:3000"
+// const url = "http://127.0.0.1:3000"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
 
 let tagsAdded = []
 const totalTags = tagsAdded.toString()
@@ -63,11 +64,11 @@ async function postPodcast(){
   tagsArray.forEach(tagElement =>{
     const option = document.createElement("option")
     option.value= tagElement
-    
-    tagsOption.appendChild(option)  
+
+    tagsOption.appendChild(option)
 
   })
-    
+
   addTag.addEventListener("click",(e)=>{
     e.preventDefault()
         const valueTag = tagsinput.value
@@ -90,8 +91,7 @@ async function postPodcast(){
       btn.className = "none"
     })
     console.log(tagsAdded)
-  
+
   })
 
-} 
-
+}

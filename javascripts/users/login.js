@@ -1,6 +1,7 @@
 const email = document.getElementById("exampleInputEmail1");
 const password = document.getElementById ("exampleInputPassword1");
-const url = "http://127.0.0.1:3000/Users/login"
+// const url = "http://127.0.0.1:3000/Users/login"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000/Users/login"
 const submit = document.getElementById("login");
 
 async function login (e) {
@@ -21,8 +22,7 @@ async function login (e) {
       sessionStorage.setItem('userLoggedIn', datos.user.Id)
       window.location.replace("index.html")
     }else{ alert("Usuario o contraseña incorrectos")}
-    
-    
+
+
 }
 submit.addEventListener("click",login)
-

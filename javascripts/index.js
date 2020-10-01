@@ -42,8 +42,8 @@ arrayTag.forEach(tag => {
 //--- FOR ladies --- //
 
 const forHer = document.getElementById("forHer")
-const url = "http://127.0.0.1:3000"
-// const url = "http://gwabackend.us-west-2.elasticbeanstalk.com"
+// const url = "http://127.0.0.1:3000"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
 
 audiosForHer()
 

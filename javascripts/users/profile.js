@@ -5,7 +5,8 @@ const myAudios= document.getElementById("myAudios")
 const btnAboutMe = document.getElementById("btns")
 const profilePhoto = document.getElementById("profilePhoto")
 const favoritesPlace = document.getElementById("favorites")
-const url = "http://127.0.0.1:3000"
+// const url = "http://127.0.0.1:3000"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
 
 const getId = localStorage.getItem("userId");
 const idloggedin = sessionStorage.getItem("userLoggedIn")
@@ -31,7 +32,7 @@ async function getUser (id){
         username.innerHTML = datos[0].User;
         aboutMe.innerHTML = datos[0].About_me
         pronouns.innerHTML = datos[0].Pronouns
-/*         profilePhoto.setAttribute("src", "" )AGREGAR FOTO */ 
+/*         profilePhoto.setAttribute("src", "" )AGREGAR FOTO */
     const validate = await validateUser()
     if(validate){
         const bluePrint = document.createElement("a")
@@ -88,9 +89,9 @@ async function getUserAudios(id){
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)
             audiosList.appendChild(audioText)
-            audiosList.appendChild(more) 
+            audiosList.appendChild(more)
             myAudios.appendChild(audiosList)
-            
+
             })
     }else {
         datos.forEach(audio => {
@@ -132,7 +133,7 @@ async function getUserAudios(id){
             audiosList.appendChild(img)
             audiosList.appendChild(audioText)
             spanDelete.appendChild(btnDelete)
-            audiosList.appendChild(spanDelete) 
+            audiosList.appendChild(spanDelete)
             myAudios.appendChild(audiosList)
         })
         favorites()
@@ -179,14 +180,14 @@ async function favorites (){
                         },
                     })
                     const respJson = await resp.json()
-                    location.reload() 
+                    location.reload()
         })
             titleAnchor.appendChild(title)
             audioText.appendChild(titleAnchor)
             audiosList.appendChild(img)
             audiosList.appendChild(audioText)
             spanDelete.appendChild(btnDelete)
-            audiosList.appendChild(spanDelete) 
+            audiosList.appendChild(spanDelete)
             favoritesPlace.appendChild(audiosList)
     })
 }

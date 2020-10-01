@@ -7,7 +7,9 @@ const pronouns = document.getElementById("inputState")
 const deleteBtn = document.getElementById("deleteAccount")
 
 
-const url = "http://127.0.0.1:3000"
+// const url = "http://127.0.0.1:3000"
+const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
+
 getUsersDetails()
 
   if(sessionStorage.getItem("userLoggedIn")) {
@@ -32,7 +34,7 @@ async function getUsersDetails(){
     }
     if(datos[0].About_me){
       aboutMe.value = datos[0].About_me
-    } 
+    }
     password.value = datos[0].Password
 
 }
@@ -40,7 +42,7 @@ async function getUsersDetails(){
 /* Aca agregar el valor de la foto */
 update.addEventListener("click", async (e) => {
     e.preventDefault()
-    
+
     const token = sessionStorage.getItem("token")
     const body = {"Password": password.value, "AboutMe": aboutMe.value, "Photo": "", "Gender":gender.value ,"Pronouns": pronouns.value}
     const JsonBody = JSON.stringify(body)
@@ -71,7 +73,7 @@ async function validateUser(){
   if(respJson.error){
       return "false"
   }else{ return respJson }
-  
+
 }
 deleteBtn.addEventListener("click",async ()=>{
   window.location.replace("confirmationaccountdeletion.html")
