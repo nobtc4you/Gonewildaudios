@@ -6,7 +6,7 @@ const btnAboutMe = document.getElementById("btns")
 const profilePhoto = document.getElementById("profilePhoto")
 const favoritesPlace = document.getElementById("favorites")
 // const url = "http://127.0.0.1:3000"
-const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
+const url = "http://gonewildaudios.com:3000"
 
 const getId = localStorage.getItem("userId");
 const idloggedin = sessionStorage.getItem("userLoggedIn")

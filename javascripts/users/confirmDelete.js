@@ -3,7 +3,7 @@ const deleteBtn = document.getElementById("delete")
 const userId = sessionStorage.getItem("userLoggedIn")
 const token = sessionStorage.getItem("token")
 // const url = "http://127.0.0.1:3000"
-const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
+const url = "http://gonewildaudios.com:3000"
 
 
 

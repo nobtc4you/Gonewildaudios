@@ -6,7 +6,7 @@ const heart = document.getElementById("heart")
 const script = document.getElementById("script")
 
 // const url = "http://127.0.0.1:3000"
-const url = "http://ec2-52-12-39-230.us-west-2.compute.amazonaws.com:3000"
+const url = "http://gonewildaudios.com:3000"
 
 if(sessionStorage.getItem("userLoggedIn")){
     const signUp = document.getElementById("signUpMenu")
